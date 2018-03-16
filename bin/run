@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require_relative '../lib/run'
+
+path = ARGV.first
+raise 'Provide path to source code' unless path
+
+Run.new(path)
