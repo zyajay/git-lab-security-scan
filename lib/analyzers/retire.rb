@@ -69,7 +69,10 @@ module Analyzers
 
             if identifiers
               issue.cve = identifiers['CVE'].first if identifiers['CVE']
-              issue.message = identifiers['summary']
+              issue.message = (identifiers['summary'] ||
+                'Vulnerability') + ' for ' + result['component']
+            else
+              issue.message = 'Vulnerability for ' + result['component']
             end
 
             issues << issue

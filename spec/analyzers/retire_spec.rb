@@ -26,10 +26,18 @@ RSpec.describe Analyzers::Retire do
     let(:issues) { mock_analyzer_output(Analyzers::Retire.new(app), result_path) }
 
     it 'expect to have correct issues' do
-      expect(issues.size).to eq(1)
-      expect(issues[0].priority).to eq('High')
+      expect(issues.size).to eq(5)
+      expect(issues[0].priority).to eq('Medium')
+      expect(issues[0].cve).to eq('CVE-2015-2951')
+      expect(issues[0].message).to eq('3rd party CORS request may execute for jquery')
       expect(issues[0].tool).to eq(:retire)
-      expect(issues[0].url).to eq('https://nodesecurity.io/advisories/51')
+      expect(issues[0].url).to eq('https://github.com/jquery/jquery/issues/2432')
+
+      expect(issues[2].priority).to eq('High')
+      expect(issues[2].cve).to eq(nil)
+      expect(issues[2].message).to eq('Vulnerability for ansi2html')
+      expect(issues[2].tool).to eq(:retire)
+      expect(issues[2].url).to eq('https://nodesecurity.io/advisories/51')
     end
   end
 end
