@@ -8,7 +8,7 @@ These "stable" Docker images may be updated after release date, changes are adde
 - Initial release
 
 ## 10-6-stable
-- Backport of Initial release
+- **Backport:** Initial release
 
 ## 10-5-stable
-- Backport of Initial release
+- **Backport:** Initial release
