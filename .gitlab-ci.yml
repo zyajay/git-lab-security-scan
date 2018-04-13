@@ -9,7 +9,7 @@ stages:
 
 test:
   stage: test
-  image: docker:latest
+  image: docker:stable
   services:
     - docker:dind
   variables:
@@ -116,14 +116,15 @@ sast:container:
     CI_APPLICATION_REPOSITORY: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG
     CI_APPLICATION_TAG: $CI_COMMIT_SHA
   script:
+    - docker build -t "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG" .
     - docker run -d --name db arminc/clair-db:latest
     - docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan:v2.0.1
     - apk add -U wget ca-certificates
-    - docker pull ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}
     - wget https://github.com/arminc/clair-scanner/releases/download/v8/clair-scanner_linux_amd64
     - mv clair-scanner_linux_amd64 clair-scanner
     - chmod +x clair-scanner
     - touch clair-whitelist.yml
+    - while( ! wget -q -O /dev/null  http://docker:6060/v1/namespaces ) ; do sleep 1 ; done
     - ./clair-scanner -c http://docker:6060 --ip $(hostname -i) -r gl-sast-container-report.json -l clair.log -w clair-whitelist.yml ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG} || true
   artifacts:
     paths:
