@@ -75,6 +75,8 @@ module Analyzers
               issue.message = 'Vulnerability for ' + result['component']
             end
 
+            issue.cve ||= issue.message
+
             issues << issue
           end
         end

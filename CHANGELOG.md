@@ -5,6 +5,7 @@ GitLab Dependency Scanning follows versioning of GitLab (`MAJOR.MINOR` only) and
 These "stable" Docker images may be updated after release date, changes are added to the corresponding section bellow.
 
 ## 11-0-stable
+- Fix missing cve value for some vulnerabilities (frontend workaround)
 
 ## 10-8-stable
 

@@ -75,9 +75,14 @@ module Analyzers
         # TODO: add priority once supported. Default to Unknown in the meantime
         issue.priority = 'Unknown'
 
-        identifier = advisory['identifier']
-        issue.cve = identifier if identifier && identifier.match(/^CVE-/)
         issue.message = advisory['title'] + ' for ' + dependency['name']
+        identifier = advisory['identifier']
+        # Ensure we have a value for CVE as Frontend expects one
+        issue.cve = if identifier && identifier.match(/^CVE-/)
+                      identifier
+                    else
+                      issue.message
+                    end
 
         issues << issue
       end

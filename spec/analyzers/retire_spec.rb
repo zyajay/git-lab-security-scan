@@ -34,7 +34,7 @@ RSpec.describe Analyzers::Retire do
       expect(issues[0].url).to eq('https://github.com/jquery/jquery/issues/2432')
 
       expect(issues[2].priority).to eq('High')
-      expect(issues[2].cve).to eq(nil)
+      expect(issues[2].cve).to eq('Vulnerability for ansi2html')
       expect(issues[2].message).to eq('Vulnerability for ansi2html')
       expect(issues[2].tool).to eq(:retire)
       expect(issues[2].url).to eq('https://nodesecurity.io/advisories/51')
