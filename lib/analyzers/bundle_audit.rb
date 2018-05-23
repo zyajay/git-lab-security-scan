@@ -70,7 +70,8 @@ module Analyzers
         issue.tool = :bundler_audit
         issue.message = result[:message]
         issue.url = result[:url]
-        issue.cve = result[:cve]
+        # Ensure we have a value for CVE as Frontend expects one
+        issue.cve = result[:cve] || result[:message]
         issue.file = 'Gemfile.lock'
         issue.solution = result[:solution]
         issue.priority = result[:priority]
