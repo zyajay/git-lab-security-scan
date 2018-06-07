@@ -1,5 +1,6 @@
 # rubocop:disable StringLiterals
 require_relative 'helpers'
+require 'bundler'
 
 require 'simplecov'
 
