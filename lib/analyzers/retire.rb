@@ -34,7 +34,7 @@ module Analyzers
         cmd <<-SH
           export NODE_HOME="#{@app.path}/.heroku/node"
           export PATH="#{@app.path}/.heroku/node/bin:#{@app.path}/.heroku/yarn/bin:$PATH:#{@app.path}/bin:#{@app.path}/node_modules/.bin"
-          npm install -g retire@1.6.0
+          npm install -g retire@1.6.1
           retire --outputformat json --outputpath #{report_path}
         SH
 
