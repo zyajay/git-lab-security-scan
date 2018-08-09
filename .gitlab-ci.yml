@@ -130,7 +130,7 @@ sast:container:
     paths:
       - gl-sast-container-report.json
 
-release-latest:
+release-latest-and-next-version:
   stage: release
   image: docker:git
   services:
@@ -140,10 +140,12 @@ release-latest:
   script:
     - echo "Building Docker image..."
     - docker build -t "$CI_REGISTRY_IMAGE:latest" .
+    - docker tag "$CI_REGISTRY_IMAGE:latest" "$CI_REGISTRY_IMAGE:$(cat VERSION)"
     - echo "Logging to GitLab Container Registry with CI credentials..."
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
     - echo "Pushing to GitLab Container Registry..."
     - docker push "$CI_REGISTRY_IMAGE:latest"
+    - docker push "$CI_REGISTRY_IMAGE:$(cat VERSION)"
   only:
     - master
 
