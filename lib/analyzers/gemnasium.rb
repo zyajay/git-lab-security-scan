@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'tmpdir'
 
@@ -11,9 +13,9 @@ module Analyzers
   class Gemnasium
     include Analyzers::Helpers
 
-    REPORT_NAME = 'gl-sast-gemnasium.json'.freeze
-    CLIENT_URL = 'https://gitlab.com/gitlab-org/security-products/binaries/raw/master/gemnasium-client/gemnasium-client-1.0.1'.freeze
-    CLIENT_PATH = '/app/bin/gemnasium'.freeze
+    REPORT_NAME = 'gl-sast-gemnasium.json'
+    CLIENT_URL = 'https://gitlab.com/gitlab-org/security-products/binaries/raw/master/gemnasium-client/gemnasium-client-1.0.1'
+    CLIENT_PATH = '/app/bin/gemnasium'
 
     attr_reader :app, :report_path
 

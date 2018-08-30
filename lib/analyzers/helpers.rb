@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Analyzers
   # Shared methods between Analyzers classes
   module Helpers

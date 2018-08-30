@@ -1,0 +1,695 @@
+{
+  "actions": [
+    {
+      "module": "coveralls",
+      "resolves": [
+        {
+          "id": 77,
+          "path": "coveralls>log-driver>codecov.io>request>hawk",
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>request>hawk>boom>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>request>hawk>cryptiles>boom>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>request>hawk>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>request>hawk>sntp>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>log-driver>codecov.io>request>hawk>boom>hoek",
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>log-driver>codecov.io>request>hawk>cryptiles>boom>hoek",
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>log-driver>codecov.io>request>hawk>hoek",
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "coveralls>log-driver>codecov.io>request>hawk>sntp>hoek",
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        },
+        {
+          "id": 309,
+          "path": "coveralls>log-driver>codecov.io>request",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 606,
+          "path": "coveralls>request>http-signature>sshpk",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 664,
+          "path": "coveralls>log-driver>codecov.io>request>stringstream",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 664,
+          "path": "coveralls>request>stringstream",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 598,
+          "path": "coveralls>log-driver>codecov.io>request>tunnel-agent",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 535,
+          "path": "coveralls>log-driver>codecov.io>request>form-data>mime",
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        }
+      ],
+      "target": "3.0.2",
+      "action": "install",
+      "isMajor": false
+    },
+    {
+      "action": "install",
+      "module": "nyc",
+      "target": "13.0.1",
+      "isMajor": true,
+      "resolves": [
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-generator>babel-types>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-generator>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-template>babel-traverse>babel-types>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-template>babel-traverse>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-template>babel-types>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-template>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-traverse>babel-types>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-traverse>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nyc>istanbul-lib-instrument>babel-types>lodash",
+          "dev": true,
+          "optional": false,
+          "bundled": true
+        },
+        {
+          "id": 157,
+          "path": "nyc>micromatch>braces>expand-range>fill-range>randomatic",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 157,
+          "path": "nyc>test-exclude>micromatch>braces>expand-range>fill-range>randomatic",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "install",
+      "module": "mocha",
+      "target": "5.2.0",
+      "isMajor": true,
+      "resolves": [
+        {
+          "id": 534,
+          "path": "mocha>debug",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 146,
+          "path": "mocha>growl",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "module": "chokidar",
+      "resolves": [
+        {
+          "id": 534,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>tar-pack>debug",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>hawk>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>hawk>cryptiles>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>hawk>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>hawk>sntp>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>hawk>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 646,
+          "path": "nuxt>chokidar>anymatch>micromatch>extglob>expand-brackets>snapdragon>source-map-resolve>atob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>hawk>cryptiles>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 646,
+          "path": "nuxt>chokidar>braces>snapdragon>source-map-resolve>atob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>hawk>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 577,
+          "path": "nuxt>chokidar>upath>lodash",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>hawk>sntp>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 646,
+          "path": "nuxt>chokidar>anymatch>micromatch>extglob>snapdragon>source-map-resolve>atob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 612,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>rc>deep-extend",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 646,
+          "path": "nuxt>chokidar>anymatch>micromatch>braces>snapdragon>source-map-resolve>atob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 606,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>http-signature>sshpk",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 646,
+          "path": "nuxt>chokidar>anymatch>micromatch>nanomatch>snapdragon>source-map-resolve>atob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 664,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>stringstream",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 646,
+          "path": "nuxt>chokidar>anymatch>micromatch>snapdragon>source-map-resolve>atob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 525,
+          "path": "nuxt>chokidar>fsevents>node-pre-gyp>request>tough-cookie",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        }
+      ],
+      "target": "2.0.4",
+      "action": "update",
+      "depth": 2
+    },
+    {
+      "action": "update",
+      "module": "fsevents",
+      "depth": 5,
+      "target": "1.2.4",
+      "resolves": [
+        {
+          "id": 534,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>tar-pack>debug",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>hawk>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>hawk>cryptiles>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>hawk>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>hawk>sntp>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>hawk>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>hawk>cryptiles>boom>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>hawk>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>hawk>sntp>hoek",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 612,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>rc>deep-extend",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 606,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>http-signature>sshpk",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 664,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>stringstream",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 525,
+          "path": "nuxt>webpack>watchpack>chokidar>fsevents>node-pre-gyp>request>tough-cookie",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        }
+      ]
+    },
+    {
+      "module": "request",
+      "resolves": [
+        {
+          "id": 566,
+          "path": "browser-env>window>jsdom>request>hawk>boom>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 606,
+          "path": "browser-env>window>jsdom>request>http-signature>sshpk",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "jsdom>request>hawk>boom>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 606,
+          "path": "jsdom>request>http-signature>sshpk",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "browser-env>window>jsdom>request>hawk>cryptiles>boom>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 664,
+          "path": "browser-env>window>jsdom>request>stringstream",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        },
+        {
+          "id": 566,
+          "path": "jsdom>request>hawk>cryptiles>boom>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 664,
+          "path": "jsdom>request>stringstream",
+          "dev": false,
+          "optional": true,
+          "bundled": true
+        }
+      ],
+      "target": "2.88.0",
+      "action": "update",
+      "depth": 4
+    },
+    {
+      "action": "update",
+      "module": "macaddress",
+      "depth": 6,
+      "target": "0.2.9",
+      "resolves": [
+        {
+          "id": 654,
+          "path": "nuxt>css-loader>cssnano>postcss-filter-plugins>uniqid>macaddress",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "update",
+      "module": "hoek",
+      "depth": 7,
+      "target": "4.2.1",
+      "resolves": [
+        {
+          "id": 566,
+          "path": "browser-env>window>jsdom>request>hawk>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "browser-env>window>jsdom>request>hawk>sntp>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "jsdom>request>hawk>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 566,
+          "path": "jsdom>request>hawk>sntp>hoek",
+          "dev": true,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "update",
+      "module": "ssri",
+      "depth": 4,
+      "target": "5.3.0",
+      "resolves": [
+        {
+          "id": 565,
+          "path": "nuxt>uglifyjs-webpack-plugin>cacache>ssri",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "update",
+      "module": "fill-range",
+      "depth": 9,
+      "target": "2.2.4",
+      "resolves": [
+        {
+          "id": 157,
+          "path": "nuxt>webpack>watchpack>chokidar>anymatch>micromatch>braces>expand-range>fill-range>randomatic",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 157,
+          "path": "mocha-webpack>anymatch>micromatch>braces>expand-range>fill-range>randomatic",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "string",
+      "resolves": [
+        {
+          "id": 536,
+          "path": "nuxtent>markdown-it-anchor>string",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "77": {
+      "findings": [
+        {
+          "version": "1.1.1",
+          "paths": [
+            "coveralls>log-driver>codecov.io>request>hawk"
+          ],
+          "dev": true,
+          "optional": true,
+          "bundled": false
+        }
+      ],
+      "id": 77,
+      "created": "2016-01-19T21:50:30.175Z",
+      "updated": "2018-02-26T22:47:26.285Z",
+      "deleted": null,
+      "title": "Regular Expression Denial of Service",
+      "found_by": {
+        "name": "Adam Baldwin"
+      },
+      "reported_by": {
+        "name": "Adam Baldwin"
+      },
+      "module_name": "hawk",
+      "cves": [
+        "CVE-2016-2515"
+      ],
+      "vulnerable_versions": "< 3.1.3  || >= 4.0.0 <4.1.1",
+      "patched_versions": ">=3.1.3 < 4.0.0 || >=4.1.1",
+      "overview": "Versions of `hawk` prior to 3.1.3, or 4.x prior to 4.1.1 are affected by a regular expression denial of service vulnerability related to excessively long headers and URI's.\n",
+      "recommendation": "Update to hawk version 4.1.1 or later.",
+      "references": "[Issue #168](https://github.com/hueniverse/hawk/issues/168)",
+      "access": "public",
+      "severity": "moderate",
+      "cwe": "CWE-400",
+      "metadata": {
+        "module_type": "Network.Library",
+        "exploitability": 5,
+        "affected_components": ""
+      },
+      "url": "https://nodesecurity.io/advisories/77"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 1,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 7969,
+    "devDependencies": 1547,
+    "optionalDependencies": 601,
+    "totalDependencies": 10057
+  },
+  "runId": "9ada307f-11ec-49f9-8bf5-c91f29862a57"
+}

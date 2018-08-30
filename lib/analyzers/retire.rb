@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'tmpdir'
 
@@ -11,8 +13,8 @@ module Analyzers
   class Retire
     include Analyzers::Helpers
 
-    BUILDPACK_URL = 'https://github.com/heroku/heroku-buildpack-nodejs'.freeze
-    REPORT_NAME = 'gl-sast-retire.json'.freeze
+    BUILDPACK_URL = 'https://github.com/heroku/heroku-buildpack-nodejs'
+    REPORT_NAME = 'gl-sast-retire.json'
 
     attr_reader :app, :report_path
 

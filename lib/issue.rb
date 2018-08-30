@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Generic structure for any security issue found by analyzer
 class Issue
   ATTRIBUTES = %w[tool tools fingerprint message url cve file line priority solution].freeze

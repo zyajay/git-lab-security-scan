@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'analyzers/bundle_audit'
 require_relative 'analyzers/gemnasium'
+require_relative 'analyzers/npm_audit'
 require_relative 'analyzers/retire'
 
 # Run Dependency analyzer tools over source code
@@ -27,6 +30,12 @@ class Analyze
     # Run bundle audit if Bundler is used
     if @app.technologies.package_manager?(:bundler)
       issues += Analyzers::BundleAudit.new(app).execute
+      has_found_technology = true
+    end
+
+    # Run NPM audit for Javascript apps using NPM
+    if ENV['SAST_DISABLE_REMOTE_CHECKS'] != 'true' && @app.technologies.package_manager?(:npm)
+      issues += Analyzers::NPMAudit.new(app).execute
       has_found_technology = true
     end
 

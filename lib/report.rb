@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'text-table'
 require 'word_wrap'
@@ -65,7 +67,7 @@ class Report
   # Dedupe based on the CVE identifier only for now
   def dedupe_issues!(issues)
     # Tools with best metadata come first
-    tools_priority = %i[bundler_audit retire gemnasium].freeze
+    tools_priority = %i[bundler_audit npm_audit retire gemnasium].freeze
 
     issues.group_by(&:cve).each do |cve, duplicates|
       next unless cve

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 # rubocop:disable StringLiterals
+
 require_relative 'helpers'
 require 'bundler'
 

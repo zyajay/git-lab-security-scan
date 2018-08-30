@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require_relative '../lib/technology'
 require_relative '../lib/technologies'
 
 module Helpers
-  C_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/c.git'.freeze
-  CPLUSPLUS_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/cplusplus.git'.freeze
-  RUBY_REPO = 'https://gitlab.com/gitlab-org/gl-sast'.freeze
-  RAILS_REPO = 'https://gitlab.com/dzaporozhets/sast-sample-rails.git'.freeze
-  RAILS_YARN_REPO = 'https://gitlab.com/groulot/sast-test-rails-and-yarn.git'.freeze
-  JS_YARN_REPO = 'https://gitlab.com/dz-test-sast/ghost.git'.freeze
-  JS_NPM_REPO = 'https://gitlab.com/groulot/sast-test-npm.git'.freeze
-  PY_REPO = 'https://gitlab.com/dz-test-sast/django-cms'.freeze
-  PY_NO_VULN_REPO = 'https://gitlab.com/groulot/sast-test-python-no-vulnerability.git'.freeze
-  MAVEN_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/java-maven.git'.freeze
+  C_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/c.git'
+  CPLUSPLUS_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/cplusplus.git'
+  RUBY_REPO = 'https://gitlab.com/gitlab-org/gl-sast'
+  RAILS_REPO = 'https://gitlab.com/dzaporozhets/sast-sample-rails.git'
+  RAILS_YARN_REPO = 'https://gitlab.com/groulot/sast-test-rails-and-yarn.git'
+  JS_YARN_REPO = 'https://gitlab.com/dz-test-sast/ghost.git'
+  JS_NPM_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/js-npm.git'
+  PY_REPO = 'https://gitlab.com/dz-test-sast/django-cms'
+  PY_NO_VULN_REPO = 'https://gitlab.com/groulot/sast-test-python-no-vulnerability.git'
+  MAVEN_REPO = 'https://gitlab.com/gitlab-org/security-products/tests/java-maven.git'
 
   def git_clone(url, dir)
     path = File.join(File.expand_path(File.dirname(__FILE__)), '../tmp', dir)

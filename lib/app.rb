@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'technologies'
 
 # Collect information about source code like programming language and framework

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A technology gathers a framework, package manager and a language together
 class Technology
   attr_reader :language, :package_manager, :framework

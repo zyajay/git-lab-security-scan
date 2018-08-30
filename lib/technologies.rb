@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'set'
 require 'find'
 require 'forwardable'
@@ -7,7 +9,7 @@ require_relative 'technology'
 class Technologies
   extend Forwardable
 
-  DOCKER_SOCKET_PATH = '/var/run/docker.sock'.freeze
+  DOCKER_SOCKET_PATH = '/var/run/docker.sock'
 
   attr_reader :technologies
 
@@ -79,7 +81,7 @@ class Technologies
   # Returns a list of warnings if not
   def requirement_warnings
     warnings = []
-    dind_is_needed = 'Docker-in-Docker is needed. Please update your .gitlab-ci.yml file. See : https://docs.gitlab.com/ee/ci/examples/sast.html'.freeze
+    dind_is_needed = 'Docker-in-Docker is needed. Please update your .gitlab-ci.yml file. See : https://docs.gitlab.com/ee/ci/examples/sast.html'
 
     if package_manager?(:maven) && !docker_available?
       # The Gemnasium client requires docker to check dependencies for Maven projects

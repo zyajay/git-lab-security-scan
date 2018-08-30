@@ -1,0 +1,22 @@
+{
+  "name": "sast-test-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/groulot/sast-test-npm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/groulot/sast-test-npm/issues"
+  },
+  "homepage": "https://gitlab.com/groulot/sast-test-npm#README",
+  "dependencies": {
+    "ansi2html": "0.0.1"
+  }
+}

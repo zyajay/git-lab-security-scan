@@ -31,7 +31,7 @@ Dependency Scanning can be configured with environment variables, here is a list
 
 | Name                           | Function                                                                           |
 |--------------------------------|------------------------------------------------------------------------------------|
-| DEP_SCAN_DISABLE_REMOTE_CHECKS | Do not send any data to GitLab (Used in the dependency version checker, see below) |
+| DEP_SCAN_DISABLE_REMOTE_CHECKS | Do not send any data to GitLab or NPM (Used in the dependency version checker, see below) |
 
 ## Development
 
@@ -92,7 +92,7 @@ The following table shows which languages and package managers are supported and
 
 ## Remote checks
 
-While some tools pull a local database to check vulnerabilities, some others require to send data to GitLab central servers to analyze them.
+While some tools pull a local database to check vulnerabilities, some others require to send data to GitLab central servers or third party servers to analyze them.
 You can disable these tools by using the `DEP_SCAN_DISABLE_REMOTE_CHECKS` [environment variable](https://docs.gitlab.com/ee/ci/variables/README.html#gitlab-ci-yml-defined-variables).
 
 Here is the list of tools that are doing such remote checks and what kind of data they send:
@@ -104,6 +104,13 @@ Here is the list of tools that are doing such remote checks and what kind of dat
 * Then the client picks up the relevant vulnerabilities by comparing with the versions of the packages that are used by the project.
 
 Gemnasium does *NOT* send the exact package versions your project relies on.
+
+**NPM**
+
+* NPM audit submits a description of the dependencies of your project to your default NPM registry.
+* The NPM registry returns a report of known vulnerabilities.
+
+For more details, see [NPM audit](https://docs.npmjs.com/cli/audit) on NPM documentation.
 
 ## Versioning and release process
 

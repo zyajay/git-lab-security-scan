@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'helpers'
 require_relative '../issue'
 
@@ -10,7 +12,7 @@ module Analyzers
   class BundleAudit
     include Analyzers::Helpers
 
-    REPORT_NAME = 'gl-sast-bundle-audit.json'.freeze
+    REPORT_NAME = 'gl-sast-bundle-audit.json'
 
     attr_reader :app, :report_path
 

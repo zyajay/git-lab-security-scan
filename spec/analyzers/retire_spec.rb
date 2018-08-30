@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/analyzers/retire'
 require 'spec_helper'
 
@@ -11,7 +13,7 @@ RSpec.describe Analyzers::Retire do
       end
     end
 
-    let!(:app_path) { clone_js_npm_app }
+    let!(:app_path) { file_fixture_path('retire_npm_app') }
 
     it 'expects to parse its output and find issues' do
       expect(issues.size).to be >= 1

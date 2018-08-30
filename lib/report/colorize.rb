@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'colorize'
 
 # Monkeypatches colorize to handle ANSI colors correctly
