@@ -9,6 +9,6 @@ RUN apt-get update && apt-get install -y curl software-properties-common && \
   apt-get install -y nodejs && \
   rm -rf /var/lib/apt/lists/*
 
-RUN bundle install --without development test
+RUN bundle install
 
 ENTRYPOINT  ["/app/bin/run"]

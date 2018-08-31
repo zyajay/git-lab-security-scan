@@ -16,10 +16,12 @@ test:
     DOCKER_DRIVER: overlay2
   script:
     - setup_docker
+    - docker build -t test .
     - docker run
       --volume "$PWD:/app"
       --volume /var/run/docker.sock:/var/run/docker.sock
-      ruby:2.3 sh -c "cd /app && bundle install && rspec spec"
+      --entrypoint /bin/sh
+      test -c "rspec spec"
   only:
     - branches
 
