@@ -19,7 +19,7 @@ RSpec.describe Analyzers::NPMAudit do
       expect(issues.size).to be >= 2
       expect(issues).to all(have_attributes(tool: :npm_audit))
       expect(
-        issues.any? { |i| i.message == 'Versions of `deep-extend` before 0.5.1 are vulnerable to prototype pollution.' }
+        issues.any? { |i| i.message == "Prototype Pollution\n\nVersions of `deep-extend` before 0.5.1 are vulnerable to prototype pollution." }
       ).to be true
       expect(
         issues.any? { |i| i.cve.nil? || /\ACVE-/ =~ i.cve }
@@ -43,7 +43,7 @@ RSpec.describe Analyzers::NPMAudit do
       it 'expect to have correct issues' do
         expect(issues.size).to eq(1)
         expect(issues[0].tool).to eq(:npm_audit)
-        expect(issues[0] .message).to eq('Versions of `hawk` prior to 3.1.3, or 4.x prior to 4.1.1 are affected by a regular expression denial of service vulnerability related to excessively long headers and URI\'s.')
+        expect(issues[0] .message).to eq("Regular Expression Denial of Service\n\nVersions of `hawk` prior to 3.1.3, or 4.x prior to 4.1.1 are affected by a regular expression denial of service vulnerability related to excessively long headers and URI's.")
       end
     end
 
