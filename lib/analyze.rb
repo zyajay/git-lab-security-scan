@@ -15,7 +15,9 @@ class Analyze
     has_found_technology = false
 
     # Always run Gemnasium once for all technologies
-    if ENV['SAST_DISABLE_REMOTE_CHECKS'] != 'true' && @app.technologies.any?
+    if ENV['SAST_DISABLE_REMOTE_CHECKS'] != 'true' \
+      && ENV['DEP_SCAN_DISABLE_REMOTE_CHECKS'] != 'true' \
+      && @app.technologies.any?
       analyzer = Analyzers::Gemnasium.new(app)
 
       if analyzer.found_technology?
