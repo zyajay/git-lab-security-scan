@@ -63,7 +63,7 @@ RSpec.describe Analyze do
     end
   end
 
-  context 'with remote checks disabled' do
+  context 'with remote checks disabled with the old environment variable' do
     let!(:app_path) { file_fixture_path('empty_ruby_repository') }
     let(:app) { App.new(app_path) }
     let(:gms_analyzer) { double(found_technology?: false) }
@@ -83,6 +83,34 @@ RSpec.describe Analyze do
     it 'expect to exec Gemnasium analyzer if another value than "true"' do
       Bundler.with_clean_env do
         ENV['SAST_DISABLE_REMOTE_CHECKS'] = ''
+        allow(Analyzers::Gemnasium).to receive(:new).and_return(gms_analyzer)
+        allow(Analyzers::BundleAudit).to receive_message_chain(:new, :execute) { [] }
+        Analyze.new(app).issues
+        expect(Analyzers::Gemnasium).to have_received(:new)
+      end
+    end
+  end
+
+  context 'with remote checks disabled with the correct environment variable' do
+    let!(:app_path) { file_fixture_path('empty_ruby_repository') }
+    let(:app) { App.new(app_path) }
+    let(:gms_analyzer) { double(found_technology?: false) }
+
+    it 'expect to not exec Gemnasium analyzer' do
+      Bundler.with_clean_env do
+        allow_any_instance_of(Analyzers::BundleAudit).to receive(:execute)
+          .and_return([])
+        ENV['DEP_SCAN_DISABLE_REMOTE_CHECKS'] = 'true'
+        allow(Analyzers::Gemnasium).to receive(:new)
+        allow(Analyzers::BundleAudit).to receive_message_chain(:new, :execute) { [] }
+        Analyze.new(app).issues
+        expect(Analyzers::Gemnasium).not_to have_received(:new)
+      end
+    end
+
+    it 'expect to exec Gemnasium analyzer if another value than "true"' do
+      Bundler.with_clean_env do
+        ENV['DEP_SCAN_DISABLE_REMOTE_CHECKS'] = ''
         allow(Analyzers::Gemnasium).to receive(:new).and_return(gms_analyzer)
         allow(Analyzers::BundleAudit).to receive_message_chain(:new, :execute) { [] }
         Analyze.new(app).issues
