@@ -72,6 +72,7 @@ module Analyzers
         issue.tool = :gemnasium
         issue.url = advisory['urls'].first
         issue.file = dependency['file']
+        issue.solution = advisory['solution']
         # TODO: add priority once supported. Default to Unknown in the meantime
         issue.priority = 'Unknown'
 

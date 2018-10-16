@@ -19,6 +19,7 @@ RSpec.describe Analyzers::Gemnasium do
       expect(issues.size).to be >= 1
       expect(issues).to all(have_attributes(tool: :gemnasium))
       expect(issues.any? { |i| i.message == 'Regular Expression Denial of Service for minimatch' }).to be true
+      expect(issues.any? { |i| i.solution == 'Upgrade to latest version.' }).to be true
     end
   end
 
@@ -47,6 +48,7 @@ RSpec.describe Analyzers::Gemnasium do
       expect(issues.size).to eq(9)
       expect(issues).to all(have_attributes(tool: :gemnasium))
       expect(issues[0].message).to eq('Regular Expression Denial of Service for minimatch')
+      expect(issues[0].solution).to eq('Upgrade to latest version.')
     end
   end
 end
