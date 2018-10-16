@@ -5,6 +5,7 @@ GitLab Dependency Scanning follows versioning of GitLab (`MAJOR.MINOR` only) and
 These "stable" Docker images may be updated after release date, changes are added to the corresponding section bellow.
 
 ## 11-5-stable
+- Vulnerabilities reported by Gemnasium now include a solution.
 
 ## 11-4-stable
 - Fix dependency scanning ignoring the variable DEP_SCAN_DISABLE_REMOTE_CHECKS.
