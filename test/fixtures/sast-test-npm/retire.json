@@ -1,0 +1,1 @@
+[{"results":[{"component":"ansi2html","version":"0.0.1","parent":{"component":"sast-test-npm","version":"1.0.0"},"level":1,"vulnerabilities":[{"info":["https://nodesecurity.io/advisories/51"],"severity":"high"}]}]}]

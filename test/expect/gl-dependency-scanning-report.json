@@ -1,0 +1,576 @@
+[
+  {
+    "category": "dependency_scanning",
+    "name": "Vulnerability in ansi2html",
+    "cve": "ansi2html@0.0.1:https://nodesecurity.io/advisories/51",
+    "severity": "High",
+    "scanner": {
+      "id": "retire.js",
+      "name": "Retire.js"
+    },
+    "location": {},
+    "identifiers": [],
+    "links": [
+      {
+        "url": "https://nodesecurity.io/advisories/51"
+      }
+    ],
+    "priority": "High",
+    "url": "https://nodesecurity.io/advisories/51",
+    "tool": "retire.js"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "ffi - CVE-2018-1000201",
+    "message": "ruby-ffi DDL loading issue on Windows OS",
+    "cve": "ffi:1.9.18:CVE-2018-1000201",
+    "severity": "High",
+    "solution": "upgrade to \u003e= 1.9.24",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-1000201",
+        "value": "CVE-2018-1000201",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000201"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/ffi/ffi/releases/tag/1.9.24"
+      }
+    ],
+    "priority": "High",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/ffi/ffi/releases/tag/1.9.24",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "rails-html-sanitizer - CVE-2018-3741",
+    "message": "XSS vulnerability in rails-html-sanitizer",
+    "cve": "rails-html-sanitizer:1.0.3:CVE-2018-3741",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 1.0.4",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-3741",
+        "value": "CVE-2018-3741",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3741"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "loofah - CVE-2018-8048",
+    "message": "Loofah XSS Vulnerability",
+    "cve": "loofah:2.1.1:CVE-2018-8048",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 2.2.1",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-8048",
+        "value": "CVE-2018-8048",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/flavorjones/loofah/issues/144"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/flavorjones/loofah/issues/144",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "nokogiri - CVE-2018-14404",
+    "message": "Nokogiri gem, via libxml2, is affected by multiple vulnerabilities",
+    "cve": "nokogiri:1.8.1:CVE-2018-14404",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 1.8.5",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-14404",
+        "value": "CVE-2018-14404",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14404"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/sparklemotion/nokogiri/issues/1785"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/sparklemotion/nokogiri/issues/1785",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "nokogiri - CVE-2017-15412",
+    "message": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
+    "cve": "nokogiri:1.8.1:CVE-2017-15412",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 1.8.2",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2017-15412",
+        "value": "CVE-2017-15412",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/sparklemotion/nokogiri/issues/1714",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "nokogiri - CVE-2018-8048",
+    "message": "Revert libxml2 behavior in Nokogiri gem that could cause XSS",
+    "cve": "nokogiri:1.8.1:CVE-2018-8048",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 1.8.3",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-8048",
+        "value": "CVE-2018-8048",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/sparklemotion/nokogiri/pull/1746"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/sparklemotion/nokogiri/pull/1746",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "rack - CVE-2018-16471",
+    "message": "Possible XSS vulnerability in Rack",
+    "cve": "rack:2.0.3:CVE-2018-16471",
+    "severity": "Unknown",
+    "solution": "upgrade to ~\u003e 1.6.11, \u003e= 2.0.6",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-16471",
+        "value": "CVE-2018-16471",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16471"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/NAalCee8n6o"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/NAalCee8n6o",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "loofah - CVE-2018-16468",
+    "message": "Loofah XSS Vulnerability",
+    "cve": "loofah:2.1.1:CVE-2018-16468",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 2.2.3",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-16468",
+        "value": "CVE-2018-16468",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16468"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/flavorjones/loofah/issues/154"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/flavorjones/loofah/issues/154",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "sprockets - CVE-2018-3760",
+    "message": "Path Traversal in Sprockets",
+    "cve": "sprockets:3.7.1:CVE-2018-3760",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 2.12.5, \u003c 3.0.0, \u003e= 3.7.2, \u003c 4.0.0, \u003e= 4.0.0.beta8",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-3760",
+        "value": "CVE-2018-3760",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3760"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/2S9Pwz2i16k"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/2S9Pwz2i16k",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "uglifier - OSVDB-126747",
+    "message": "uglifier incorrectly handles non-boolean comparisons during minification",
+    "cve": "uglifier:2.3.2:OSVDB-126747",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 2.7.2",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "osvdb",
+        "name": "OSVDB-126747",
+        "value": "OSVDB-126747",
+        "url": "https://cve.mitre.org/data/refs/refmap/source-OSVDB.html"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/mishoo/UglifyJS2/issues/751"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/mishoo/UglifyJS2/issues/751",
+    "tool": "bundler_audit"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "uglifier - OSVDB-126747",
+    "message": "There's a vulnerability which allows a specially crafted Javascript file to have altered functionality after minification. This bug was demonstrated to allow potentially malicious code to be hidden within secure code, activated by minification. Affected versions erroneously minify boolean expressions.",
+    "cve": "sast-sample-rails/Gemfile.lock:uglifier@2.3.2:OSVDB-126747",
+    "severity": "Unknown",
+    "solution": "Upgrade to latest version.",
+    "scanner": {
+      "id": "gemnasium",
+      "name": "Gemnasium"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "gemnasium",
+        "name": "Gemnasium-6fa33e76-33a5-4f18-b848-2f1ad12b5b45",
+        "value": "6fa33e76-33a5-4f18-b848-2f1ad12b5b45",
+        "url": "https://deps.sec.gitlab.com/packages/gem/uglifier/versions/2.3.2/advisories"
+      },
+      {
+        "type": "osvdb",
+        "name": "OSVDB-126747",
+        "value": "OSVDB-126747",
+        "url": "https://cve.mitre.org/data/refs/refmap/source-OSVDB.html"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/lautis/uglifier/pull/86"
+      },
+      {
+        "url": "https://nodesecurity.io/advisories/uglifyjs_incorrectly_handles_non-boolean_comparisons"
+      },
+      {
+        "url": "https://github.com/mishoo/UglifyJS2/issues/751"
+      },
+      {
+        "url": "https://zyan.scripts.mit.edu/blog/backdooring-js/"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/lautis/uglifier/pull/86",
+    "tool": "gemnasium"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "nokogiri - CVE-2017-15412",
+    "message": "libxml2 incorrectly handles certain files. An attacker can use this issue with specially constructed XML data to cause libxml2 to consume resources, leading to a denial of service.\r\n\r\n",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri@1.8.1:CVE-2017-15412",
+    "severity": "Unknown",
+    "solution": "Upgrade to latest version.",
+    "scanner": {
+      "id": "gemnasium",
+      "name": "Gemnasium"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "gemnasium",
+        "name": "Gemnasium-78658378-bd8f-4d79-81c8-07c419302426",
+        "value": "78658378-bd8f-4d79-81c8-07c419302426",
+        "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.8.1/advisories"
+      },
+      {
+        "type": "cve",
+        "name": "CVE-2017-15412",
+        "value": "CVE-2017-15412",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+      },
+      {
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+      },
+      {
+        "url": "https://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15412.html"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/sparklemotion/nokogiri/issues/1714",
+    "tool": "gemnasium"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "rails-html-sanitizer - CVE-2018-3741",
+    "message": "The gem allows non-whitelisted attributes to be present in sanitized output when input with\r\nspecially-crafted HTML fragments, and these attributes can lead to an XSS attack\r\non target applications.\r\n\r\nThis issue is similar to CVE-2018-8048 in Loofah.",
+    "cve": "sast-sample-rails/Gemfile.lock:rails-html-sanitizer@1.0.3:CVE-2018-3741",
+    "severity": "Unknown",
+    "solution": "Upgrade to 1.0.4 or above",
+    "scanner": {
+      "id": "gemnasium",
+      "name": "Gemnasium"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "gemnasium",
+        "name": "Gemnasium-b18e7b29-2091-41eb-ab6f-4706604b12f9",
+        "value": "b18e7b29-2091-41eb-ab6f-4706604b12f9",
+        "url": "https://deps.sec.gitlab.com/packages/gem/rails-html-sanitizer/versions/1.0.3/advisories"
+      },
+      {
+        "type": "cve",
+        "name": "CVE-2018-3741",
+        "value": "CVE-2018-3741",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3741"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ"
+      },
+      {
+        "url": "https://github.com/rails/rails-html-sanitizer/commit/f3ba1a839a35f2ba7f941c15e239a1cb379d56ae"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ",
+    "tool": "gemnasium"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "loofah - CVE-2018-8048",
+    "message": "Loofah allows non-whitelisted attributes to be present in sanitized output when input with specially-crafted HTML fragments.\r\n\r\nLoofah is affected, but only:\r\n*  when running on YARV or Rubinius,\r\n* in combination with libxml2 \u003e= 2.9.2.\r\n",
+    "cve": "sast-sample-rails/Gemfile.lock:loofah@2.1.1:CVE-2018-8048",
+    "severity": "Unknown",
+    "solution": "Upgrade to 2.2.1.",
+    "scanner": {
+      "id": "gemnasium",
+      "name": "Gemnasium"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "gemnasium",
+        "name": "Gemnasium-30131569-843b-42af-9628-de66ecbab5d9",
+        "value": "30131569-843b-42af-9628-de66ecbab5d9",
+        "url": "https://deps.sec.gitlab.com/packages/gem/loofah/versions/2.1.1/advisories"
+      },
+      {
+        "type": "cve",
+        "name": "CVE-2018-8048",
+        "value": "CVE-2018-8048",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/flavorjones/loofah/issues/144"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://github.com/flavorjones/loofah/issues/144",
+    "tool": "gemnasium"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "ansi2html - Regular Expression Denial of Service",
+    "message": "ansi2html is vulnerable to regular expression denial of service (ReDoS) when certain types of user input is passed in which can lead to long processing time that make the application unresponsive.",
+    "cve": "sast-test-npm/package-lock.json:ansi2html@0.0.1:Regular Expression Denial of Service",
+    "severity": "Unknown",
+    "solution": "Do not pass untrusted input to ansi2html or limit the size of the user input to limit the impact.",
+    "scanner": {
+      "id": "gemnasium",
+      "name": "Gemnasium"
+    },
+    "location": {
+      "file": "sast-test-npm/package-lock.json"
+    },
+    "identifiers": [
+      {
+        "type": "gemnasium",
+        "name": "Gemnasium-077d88ec-85d1-414f-a66c-fa1819bd1fdc",
+        "value": "077d88ec-85d1-414f-a66c-fa1819bd1fdc",
+        "url": "https://deps.sec.gitlab.com/packages/npm/ansi2html/versions/0.0.1/advisories"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://nodesecurity.io/advisories/51"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-test-npm/package-lock.json",
+    "url": "https://nodesecurity.io/advisories/51",
+    "tool": "gemnasium"
+  },
+  {
+    "category": "dependency_scanning",
+    "name": "activejob - CVE-2018-16476",
+    "message": "Broken Access Control vulnerability in Active Job",
+    "cve": "activejob:5.0.6:CVE-2018-16476",
+    "severity": "Unknown",
+    "solution": "upgrade to ~\u003e 4.2.11, ~\u003e 5.0.7.1, ~\u003e 5.1.6.1, \u003e= 5.2.1.1",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock"
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-16476",
+        "value": "CVE-2018-16476",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16476"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw"
+      }
+    ],
+    "priority": "Unknown",
+    "file": "sast-sample-rails/Gemfile.lock",
+    "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw",
+    "tool": "bundler_audit"
+  }
+]
