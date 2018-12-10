@@ -1,9 +1,12 @@
 # GitLab Dependency Scanning
 
-[![pipeline status](https://gitlab.com/gitlab-org/security-products/sast/badges/master/pipeline.svg)](https://gitlab.com/gitlab-org/security-products/sast/commits/master)
-[![coverage report](https://gitlab.com/gitlab-org/security-products/sast/badges/master/coverage.svg)](https://gitlab.com/gitlab-org/security-products/sast/commits/master)
+[![pipeline status](https://gitlab.com/gitlab-org/security-products/dependency-scanning/badges/master/pipeline.svg)](https://gitlab.com/gitlab-org/security-products/dependency-scanning/commits/master)
+[![coverage report](https://gitlab.com/gitlab-org/security-products/dependency-scanning/badges/master/coverage.svg)](https://gitlab.com/gitlab-org/security-products/dependency-scanning/commits/master)
 
-GitLab tool for running Dependency Security Scanning on provided project.
+GitLab tool for running Dependency Security Scanning on given project.
+It's written in Go using
+the [common library](https://gitlab.com/gitlab-org/security-products/analyzers/common)
+shared by SAST, Dependency Scanning and their analyzers.
 
 ## How to use
 
@@ -17,7 +20,8 @@ GitLab tool for running Dependency Security Scanning on provided project.
       --volume /var/run/docker.sock:/var/run/docker.sock \
       registry.gitlab.com/gitlab-org/security-products/dependency-scanning:${VERSION:-latest} /code
     ```
-    `VERSION` can be replaced with the latest available release matching your GitLab version. See [Versioning](#versioning-and-release-cycle) for more details.
+
+    `VERSION` can be replaced with the latest available release matching your GitLab version. See [Versioning](#versioning-and-release-process) for more details.
 
 1. The results will be displayed and also stored in `gl-dependency-scanning-report.json`
 
@@ -25,70 +29,77 @@ GitLab tool for running Dependency Security Scanning on provided project.
 
 Some tools require to be able to launch Docker containers to scan your application. You can skip this but you won't benefit from all scanners.
 
-### Environment variables
+## Settings
 
-Dependency Scanning can be configured with environment variables, here is a list:
+Dependency Scanning can be configured using environment variables.
+
+### Docker images
+
+| Environment variable         | Function |
+|------------------------------|----------|
+| DS_ANALYZER_IMAGES           | Comma separated list of custom images. Default images are still enabled.|
+| DS_ANALYZER_IMAGE_PREFIX     | Override the name of the Docker registry providing the default images (proxy). |
+| DS_ANALYZER_IMAGE_TAG        | Override the Docker tag of the default images. |
+| DS_DEFAULT_ANALYZERS         | Override the names of default images. |
+
+Read more about [customizing analyzers](./docs/analyzers.md#custom-analyzers).
+
+### Remote checks
 
 | Name                           | Function                                                                           |
 |--------------------------------|------------------------------------------------------------------------------------|
-| DEP_SCAN_DISABLE_REMOTE_CHECKS | Do not send any data to GitLab (Used in the dependency version checker, see below) |
+| DEP_SCAN_DISABLE_REMOTE_CHECKS | Do not send any data to GitLab (Used in the dependency version checker, see below) |
+
+### Timeouts
+
+| Environment variable                 | Function |
+|--------------------------------------|----------|
+| DS_DOCKER_CLIENT_NEGOTIATION_TIMEOUT | Time limit for Docker client negotation |
+| DS_PULL_ANALYZER_IMAGE_TIMEOUT       | Time limit when pulling the image of an analyzer |
+| DS_RUN_ANALYZER_TIMEOUT              | Time limit when running an analyzer |
+
+Timeouts are parsed using Go's [`ParseDuration`](https://golang.org/pkg/time/#ParseDuration).
+Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+Examples: "300ms", "1.5h" or "2h45m".
 
 ## Development
 
-### Running application
+### Build project
 
-Build a Docker image locally:
-
-```sh
-docker build --no-cache --rm -t dep-scan .
-```
-
-Then run it:
+Go 1.11 or higher is required to build Dependency Scanning. Go modules must be enabled.
 
 ```sh
-docker run \
-  --interactive --tty --rm \
-  --volume /path/to/source/code:/code \
-  --volume /var/run/docker.sock:/var/run/docker.sock \
-  dep-scan /code
+GO111MODULE=on go build
 ```
 
-### Running tests
+### Run locally
 
-Launch a ruby container:
-```sh
-docker run \
-  --interactive --tty --rm \
-  --volume "$PWD":/app \
-  --volume /var/run/docker.sock:/var/run/docker.sock \
-  ruby bash
-```
-
-Then run the tests:
+To run the command locally and perform the scan on `/tmp/code`:
 
 ```sh
-cd /app
-bundle install
-bundle exec rspec spec
+CI_PROJECT_DIR=/tmp/code ./dependency-scanning
 ```
 
-You can skip long integration tests by excluding the integration tag:
+### Integration tests
+
+To run the integration tests:
 
 ```sh
-bundle exec rspec spec --tag ~integration
+./test.sh
 ```
+
 
 ## Supported languages and package managers
 
 The following table shows which languages and package managers are supported and which tools are used.
 
-| Language (package managers)                                                 | Scan tool                                                                                                                         |
-|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| JavaScript ([npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/en/)) | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general), [Retire.js](https://retirejs.github.io/retire.js)         |
-| Python ([pip](https://pip.pypa.io/en/stable/))                              | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general)                                                            |
-| Ruby ([gem](https://rubygems.org/))                                         | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general), [bundler-audit](https://github.com/rubysec/bundler-audit) |
-| Java ([Maven](https://maven.apache.org/))                                   | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general),                                                           |
-| PHP ([Composer](https://getcomposer.org/))                                  | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general)                                                            |
+| Language (package managers)                                                 | Scan tool                                                                                                                                 | Introduced in GitLab Version |
+|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| JavaScript ([npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/en/)) | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general), [Retire.js](https://retirejs.github.io/retire.js)         | 10.5 |
+| Python ([pip](https://pip.pypa.io/en/stable/))                              | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general)                                                            | 10.5 |
+| Ruby ([gem](https://rubygems.org/))                                         | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general), [bundler-audit](https://github.com/rubysec/bundler-audit) | 10.5 |
+| Java ([Maven](https://maven.apache.org/))                                   | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general),                                                           | 10.5 |
+| PHP ([Composer](https://getcomposer.org/))                                  | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general)                                                            | 10.5 |
 
 ## Remote checks
 
@@ -107,7 +118,7 @@ Gemnasium does *NOT* send the exact package versions your project relies on.
 
 ## Versioning and release process
 
-Please check the [Release Process documentation](./docs/release_process.md).
+Please check the [Release Process documentation](https://gitlab.com/gitlab-org/security-products/release/blob/master/docs/release_process.md).
 
 # Contributing
 
