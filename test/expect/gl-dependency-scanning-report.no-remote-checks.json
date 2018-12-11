@@ -1,9 +1,8 @@
 [
   {
     "category": "dependency_scanning",
-    "name": "ffi - CVE-2018-1000201",
     "message": "ruby-ffi DDL loading issue on Windows OS",
-    "cve": "ffi:1.9.18:CVE-2018-1000201",
+    "cve": "sast-sample-rails/Gemfile.lock:ffi:cve:CVE-2018-1000201",
     "severity": "High",
     "solution": "upgrade to \u003e= 1.9.24",
     "scanner": {
@@ -11,7 +10,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "ffi"
+        },
+        "version": "1.9.18"
+      }
     },
     "identifiers": [
       {
@@ -25,37 +30,43 @@
       {
         "url": "https://github.com/ffi/ffi/releases/tag/1.9.24"
       }
-    ],
-    "priority": "High",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/ffi/ffi/releases/tag/1.9.24",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "Vulnerability in ansi2html",
-    "cve": "ansi2html@0.0.1:https://nodesecurity.io/advisories/51",
+    "message": "Vulnerability in ansi2html",
+    "cve": ":ansi2html:npm:51",
     "severity": "High",
     "scanner": {
       "id": "retire.js",
       "name": "Retire.js"
     },
-    "location": {},
-    "identifiers": [],
+    "location": {
+      "dependency": {
+        "package": {
+          "name": "ansi2html"
+        },
+        "version": "0.0.1"
+      }
+    },
+    "identifiers": [
+      {
+        "type": "npm",
+        "name": "NPM-51",
+        "value": "51",
+        "url": "https://www.npmjs.com/advisories/51"
+      }
+    ],
     "links": [
       {
         "url": "https://nodesecurity.io/advisories/51"
       }
-    ],
-    "priority": "High",
-    "url": "https://nodesecurity.io/advisories/51",
-    "tool": "retire.js"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "activejob - CVE-2018-16476",
     "message": "Broken Access Control vulnerability in Active Job",
-    "cve": "activejob:5.0.6:CVE-2018-16476",
+    "cve": "sast-sample-rails/Gemfile.lock:activejob:cve:CVE-2018-16476",
     "severity": "Unknown",
     "solution": "upgrade to ~\u003e 4.2.11, ~\u003e 5.0.7.1, ~\u003e 5.1.6.1, \u003e= 5.2.1.1",
     "scanner": {
@@ -63,7 +74,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "activejob"
+        },
+        "version": "5.0.6"
+      }
     },
     "identifiers": [
       {
@@ -77,17 +94,12 @@
       {
         "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "loofah - CVE-2018-16468",
     "message": "Loofah XSS Vulnerability",
-    "cve": "loofah:2.1.1:CVE-2018-16468",
+    "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-16468",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 2.2.3",
     "scanner": {
@@ -95,7 +107,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "loofah"
+        },
+        "version": "2.1.1"
+      }
     },
     "identifiers": [
       {
@@ -109,17 +127,12 @@
       {
         "url": "https://github.com/flavorjones/loofah/issues/154"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/flavorjones/loofah/issues/154",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "loofah - CVE-2018-8048",
     "message": "Loofah XSS Vulnerability",
-    "cve": "loofah:2.1.1:CVE-2018-8048",
+    "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-8048",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 2.2.1",
     "scanner": {
@@ -127,7 +140,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "loofah"
+        },
+        "version": "2.1.1"
+      }
     },
     "identifiers": [
       {
@@ -141,17 +160,12 @@
       {
         "url": "https://github.com/flavorjones/loofah/issues/144"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/flavorjones/loofah/issues/144",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "nokogiri - CVE-2018-14404",
     "message": "Nokogiri gem, via libxml2, is affected by multiple vulnerabilities",
-    "cve": "nokogiri:1.8.1:CVE-2018-14404",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-14404",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 1.8.5",
     "scanner": {
@@ -159,7 +173,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "nokogiri"
+        },
+        "version": "1.8.1"
+      }
     },
     "identifiers": [
       {
@@ -173,17 +193,12 @@
       {
         "url": "https://github.com/sparklemotion/nokogiri/issues/1785"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/sparklemotion/nokogiri/issues/1785",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "nokogiri - CVE-2018-8048",
     "message": "Revert libxml2 behavior in Nokogiri gem that could cause XSS",
-    "cve": "nokogiri:1.8.1:CVE-2018-8048",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-8048",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 1.8.3",
     "scanner": {
@@ -191,7 +206,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "nokogiri"
+        },
+        "version": "1.8.1"
+      }
     },
     "identifiers": [
       {
@@ -205,17 +226,12 @@
       {
         "url": "https://github.com/sparklemotion/nokogiri/pull/1746"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/sparklemotion/nokogiri/pull/1746",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "rack - CVE-2018-16471",
     "message": "Possible XSS vulnerability in Rack",
-    "cve": "rack:2.0.3:CVE-2018-16471",
+    "cve": "sast-sample-rails/Gemfile.lock:rack:cve:CVE-2018-16471",
     "severity": "Unknown",
     "solution": "upgrade to ~\u003e 1.6.11, \u003e= 2.0.6",
     "scanner": {
@@ -223,7 +239,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "rack"
+        },
+        "version": "2.0.3"
+      }
     },
     "identifiers": [
       {
@@ -237,17 +259,12 @@
       {
         "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/NAalCee8n6o"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/NAalCee8n6o",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "rails-html-sanitizer - CVE-2018-3741",
     "message": "XSS vulnerability in rails-html-sanitizer",
-    "cve": "rails-html-sanitizer:1.0.3:CVE-2018-3741",
+    "cve": "sast-sample-rails/Gemfile.lock:rails-html-sanitizer:cve:CVE-2018-3741",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 1.0.4",
     "scanner": {
@@ -255,7 +272,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "rails-html-sanitizer"
+        },
+        "version": "1.0.3"
+      }
     },
     "identifiers": [
       {
@@ -269,17 +292,12 @@
       {
         "url": "https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://groups.google.com/d/msg/rubyonrails-security/tP7W3kLc5u4/uDy2Br7xBgAJ",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "sprockets - CVE-2018-3760",
     "message": "Path Traversal in Sprockets",
-    "cve": "sprockets:3.7.1:CVE-2018-3760",
+    "cve": "sast-sample-rails/Gemfile.lock:sprockets:cve:CVE-2018-3760",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 2.12.5, \u003c 3.0.0, \u003e= 3.7.2, \u003c 4.0.0, \u003e= 4.0.0.beta8",
     "scanner": {
@@ -287,7 +305,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "sprockets"
+        },
+        "version": "3.7.1"
+      }
     },
     "identifiers": [
       {
@@ -301,17 +325,12 @@
       {
         "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/2S9Pwz2i16k"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/2S9Pwz2i16k",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "uglifier - OSVDB-126747",
     "message": "uglifier incorrectly handles non-boolean comparisons during minification",
-    "cve": "uglifier:2.3.2:OSVDB-126747",
+    "cve": "sast-sample-rails/Gemfile.lock:uglifier:osvdb:OSVDB-126747",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 2.7.2",
     "scanner": {
@@ -319,7 +338,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "uglifier"
+        },
+        "version": "2.3.2"
+      }
     },
     "identifiers": [
       {
@@ -333,17 +358,12 @@
       {
         "url": "https://github.com/mishoo/UglifyJS2/issues/751"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/mishoo/UglifyJS2/issues/751",
-    "tool": "bundler_audit"
+    ]
   },
   {
     "category": "dependency_scanning",
-    "name": "nokogiri - CVE-2017-15412",
     "message": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
-    "cve": "nokogiri:1.8.1:CVE-2017-15412",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2017-15412",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 1.8.2",
     "scanner": {
@@ -351,7 +371,13 @@
       "name": "bundler-audit"
     },
     "location": {
-      "file": "sast-sample-rails/Gemfile.lock"
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "nokogiri"
+        },
+        "version": "1.8.1"
+      }
     },
     "identifiers": [
       {
@@ -365,10 +391,6 @@
       {
         "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
       }
-    ],
-    "priority": "Unknown",
-    "file": "sast-sample-rails/Gemfile.lock",
-    "url": "https://github.com/sparklemotion/nokogiri/issues/1714",
-    "tool": "bundler_audit"
+    ]
   }
 ]
