@@ -8,13 +8,13 @@ require (
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/urfave/cli v1.20.0
 	gitlab.com/gitlab-org/security-products/analyzers/bundler-audit v1.1.0
-	gitlab.com/gitlab-org/security-products/analyzers/common v1.9.0
-	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20181210200154-d61d917d9ac3
-	gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20181210200154-d61d917d9ac3
+	gitlab.com/gitlab-org/security-products/analyzers/common v1.9.1
+	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20181219150649-131c639c2176
+	gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20181219150649-131c639c2176
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium v1.1.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven v1.1.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python v1.1.0
-	gitlab.com/gitlab-org/security-products/analyzers/retire.js v1.1.0
+	gitlab.com/gitlab-org/security-products/analyzers/retire.js v1.2.0
 	golang.org/x/net v0.0.0-20181207154023-610586996380 // indirect
-	golang.org/x/sys v0.0.0-20181210030007-2a47403f2ae5 // indirect
+	golang.org/x/sys v0.0.0-20181218192612-074acd46bca6 // indirect
 )
