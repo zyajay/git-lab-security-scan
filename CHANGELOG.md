@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v1.4.2
+- Fix missing build arg for `DS_ANALYZER_IMAGE_TAG`
+
 ## v1.4.1
 - Restore removal of duplicated vulnerabilities
 
