@@ -35,13 +35,14 @@
   {
     "category": "dependency_scanning",
     "message": "Vulnerability in ansi2html",
-    "cve": ":ansi2html:npm:51",
+    "cve": "sast-test-npm/package.json:ansi2html:npm:51",
     "severity": "High",
     "scanner": {
       "id": "retire.js",
       "name": "Retire.js"
     },
     "location": {
+      "file": "sast-test-npm/package.json",
       "dependency": {
         "package": {
           "name": "ansi2html"

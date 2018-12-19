@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v1.4.1
+- Restore removal of duplicated vulnerabilities
+
 ## v1.4.0
 - Introduce customizable analyzers based on Docker images
 
