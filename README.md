@@ -48,7 +48,8 @@ Read more about [customizing analyzers](./docs/analyzers.md#custom-analyzers).
 
 | Name                           | Function                                                                           |
 |--------------------------------|------------------------------------------------------------------------------------|
-| DEP_SCAN_DISABLE_REMOTE_CHECKS | Do not send any data to GitLab (Used in the dependency version checker, see below) |
+| DS_DISABLE_REMOTE_CHECKS       | Do not send any data to GitLab (Used in the dependency version checker, see below) |
+| DEP_SCAN_DISABLE_REMOTE_CHECKS | Deprecated. Renamed to `DS_DISABLE_REMOTE_CHECKS `                                 |
 
 ### Timeouts
 
@@ -104,7 +105,7 @@ The following table shows which languages and package managers are supported and
 ## Remote checks
 
 While some tools pull a local database to check vulnerabilities, some others require to send data to GitLab central servers to analyze them.
-You can disable these tools by using the `DEP_SCAN_DISABLE_REMOTE_CHECKS` [environment variable](https://docs.gitlab.com/ee/ci/variables/README.html#gitlab-ci-yml-defined-variables).
+You can disable these tools by using the `DS_DISABLE_REMOTE_CHECKS` [environment variable](https://docs.gitlab.com/ee/ci/variables/README.html#gitlab-ci-yml-defined-variables).
 
 Here is the list of tools that are doing such remote checks and what kind of data they send:
 
