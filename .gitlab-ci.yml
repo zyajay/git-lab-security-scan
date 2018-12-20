@@ -1,6 +1,7 @@
 # When using dind, it's wise to use the overlayfs driver for
 # improved performance.
 variables:
+  DS_DEFAULT_ANALYZERS: bundler-audit,retire.js,gemnasium,gemnasium-maven,gemnasium-python
   DOCKER_DRIVER: overlay2
   MAJOR: 1
 
@@ -51,7 +52,6 @@ test:
   stage: test
   variables:
     DS_ANALYZER_IMAGE_TAG: $MAJOR
-    DS_DEFAULT_ANALYZERS: bundler-audit,retire.js,gemnasium
   script:
     - ./test.sh
   dependencies:
@@ -60,8 +60,6 @@ test:
 .build:
   image: docker:stable
   stage: build
-  variables:
-    DS_DEFAULT_ANALYZERS: bundler-audit,retire.js,gemnasium
   script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
@@ -145,4 +143,3 @@ tag latest:
   extends: .deploy
   variables:
     DOCKERFILE: Dockerfile.v1
-    DS_DEFAULT_ANALYZERS: bundler-audit,retire.js,gemnasium
