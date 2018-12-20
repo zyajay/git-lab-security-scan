@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v1.4.3
+- Fix missing images gemnasium-python and gemnasimum-maven
+
 ## v1.4.2
 - Fix missing build arg for `DS_ANALYZER_IMAGE_TAG`
 
