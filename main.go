@@ -7,22 +7,22 @@ import (
 
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/security-products/analyzers/common/issue"
-	"gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator"
-	"gitlab.com/gitlab-org/security-products/analyzers/common/table"
+	"gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator/v2"
+	"gitlab.com/gitlab-org/security-products/analyzers/common/table/v2"
+	"gitlab.com/gitlab-org/security-products/analyzers/common/v2/issue"
 
-	_ "gitlab.com/gitlab-org/security-products/analyzers/bundler-audit/plugin"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/plugin"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python/plugin"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/plugin"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/retire.js/plugin"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/bundler-audit/v2/plugin"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2/plugin"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python/v2/plugin"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/plugin"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/retire.js/v2/plugin"
 
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/scanner/parser/composer"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/scanner/parser/gemfile"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/scanner/parser/mvnplugin"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/scanner/parser/npm"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/scanner/parser/pipdeptree"
-	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/scanner/parser/yarn"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/composer"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/gemfile"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/mvnplugin"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/npm"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/pipdeptree"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/yarn"
 )
 
 func main() {
@@ -47,13 +47,13 @@ func main() {
 }
 
 // renderTable renders the vulnerabilities as a plain text table.
-func renderTable(issues []issue.Issue) {
+func renderTable(report issue.Report) {
 	t := table.New([]int{10, 10, 60})
 	t.AppendSeparator()
 	t.AppendCells("Severity", "Tool", "Identifier", "URL")
 	t.AppendSeparator()
 	cveType := issue.IdentifierTypeCVE
-	for _, issue := range issues {
+	for _, issue := range report.Vulnerabilities {
 		severity := issue.Severity.String()
 		tool := issue.Scanner.Name
 

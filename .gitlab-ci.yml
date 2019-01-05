@@ -3,7 +3,7 @@
 variables:
   DS_DEFAULT_ANALYZERS: bundler-audit,retire.js,gemnasium,gemnasium-maven,gemnasium-python
   DOCKER_DRIVER: overlay2
-  MAJOR: 1
+  MAJOR: 2
 
 services:
   - docker:stable-dind
@@ -137,9 +137,4 @@ tag latest:
 11-7-stable:
   extends: .deploy
   variables:
-    DOCKERFILE: Dockerfile.v1
-
-11-6-stable:
-  extends: .deploy
-  variables:
-    DOCKERFILE: Dockerfile.v1
+    DOCKERFILE: Dockerfile.v2
