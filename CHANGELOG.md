@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.0.0
+- Switch to new report syntax with `version` field
+
 ## v1.4.3
 - Fix missing images gemnasium-python and gemnasimum-maven
 
