@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.1.1
+- Fix merging of remediations
+
 ## v2.1.0
 - Add `remediations` field to the reports
 
