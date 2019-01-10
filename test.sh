@@ -10,7 +10,7 @@ got="test/fixtures/gl-dependency-scanning-report.json"
 expect="test/expect/gl-dependency-scanning-report.json"
 
 export DS_DEFAULT_ANALYZERS=${DS_DEFAULT_ANALYZERS:-"bundler-audit,retire.js,gemnasium"}
-export DS_ANALYZER_IMAGE_TAG=${DS_ANALYZER_IMAGE_TAG:-"1"}
+export DS_ANALYZER_IMAGE_TAG=${DS_ANALYZER_IMAGE_TAG:-"2"}
 
 # Project found, artifact generated (bind mount)
 desc="Generate expected artifact (bind mount, pull images)"
