@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.1.0
+- Add `remediations` field to the reports
+
 ## v2.0.0
 - Switch to new report syntax with `version` field
 
