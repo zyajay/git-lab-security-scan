@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.1.2
+- Fix `null` vulnerabilities instead of empty JSON array
+
 ## v2.1.1
 - Fix merging of remediations
 
