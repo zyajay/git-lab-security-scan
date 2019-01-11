@@ -30,7 +30,6 @@ gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator/v2 v2.0.0-
 gitlab.com/gitlab-org/security-products/analyzers/common/table/v2 v2.0.0-20190110215534-34fb051dad8b h1:XNr+ndiR2mD+1X3+9Vz9rK3WKVGg748JbNcwn99avIQ=
 gitlab.com/gitlab-org/security-products/analyzers/common/table/v2 v2.0.0-20190110215534-34fb051dad8b/go.mod h1:GLZoQECSPhmrplEqt6QsNBD0xZSORk6ifKOAFT6AHXs=
 gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.0.0/go.mod h1:k+W8TS8696BIs1hhnVGbJbAaAXjvUkVAixhxUOV+KVs=
-gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.1.2 h1:MRGVBGYwmX2Jp7yS7t3RBsbMSI79UC3hG94+15MzcPU=
 gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.1.2/go.mod h1:k+W8TS8696BIs1hhnVGbJbAaAXjvUkVAixhxUOV+KVs=
 gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2 v2.0.0 h1:IT9LvtaDv4+LHaA4NP0CCpSjKpqy2G8hplheK0153Mc=
 gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2 v2.0.0/go.mod h1:uW/Z7McxFVRnbnRq8Qt44Nt9hGqIWWQqHGoZq8+W1JU=
