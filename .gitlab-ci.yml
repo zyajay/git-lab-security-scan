@@ -19,10 +19,6 @@ stages:
   stage: go
   variables:
     GO111MODULE: "on"
-  before_script:
-    - mkdir -p /go/src/gitlab.com/${CI_PROJECT_PATH}
-    - cp -r . /go/src/gitlab.com/${CI_PROJECT_PATH}
-    - cd /go/src/gitlab.com/${CI_PROJECT_PATH}
 
 go build:
   extends: .go
