@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.1.3
+- Fix unstable vulnerabilities ordering
+
 ## v2.1.2
 - Fix `null` vulnerabilities instead of empty JSON array
 

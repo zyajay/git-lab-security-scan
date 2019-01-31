@@ -167,6 +167,39 @@
     },
     {
       "category": "dependency_scanning",
+      "message": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
+      "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2017-15412",
+      "severity": "Unknown",
+      "solution": "upgrade to \u003e= 1.8.2",
+      "scanner": {
+        "id": "bundler_audit",
+        "name": "bundler-audit"
+      },
+      "location": {
+        "file": "sast-sample-rails/Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.8.1"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2017-15412",
+          "value": "CVE-2017-15412",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
       "message": "Nokogiri gem, via libxml2, is affected by multiple vulnerabilities",
       "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-14404",
       "severity": "Unknown",
@@ -360,39 +393,6 @@
       "links": [
         {
           "url": "https://github.com/mishoo/UglifyJS2/issues/751"
-        }
-      ]
-    },
-    {
-      "category": "dependency_scanning",
-      "message": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
-      "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2017-15412",
-      "severity": "Unknown",
-      "solution": "upgrade to \u003e= 1.8.2",
-      "scanner": {
-        "id": "bundler_audit",
-        "name": "bundler-audit"
-      },
-      "location": {
-        "file": "sast-sample-rails/Gemfile.lock",
-        "dependency": {
-          "package": {
-            "name": "nokogiri"
-          },
-          "version": "1.8.1"
-        }
-      },
-      "identifiers": [
-        {
-          "type": "cve",
-          "name": "CVE-2017-15412",
-          "value": "CVE-2017-15412",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
-        }
-      ],
-      "links": [
-        {
-          "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
         }
       ]
     }
