@@ -3,38 +3,6 @@
   "vulnerabilities": [
     {
       "category": "dependency_scanning",
-      "message": "Vulnerability in ansi2html",
-      "cve": "sast-test-npm/package.json:ansi2html:npm:51",
-      "severity": "High",
-      "scanner": {
-        "id": "retire.js",
-        "name": "Retire.js"
-      },
-      "location": {
-        "file": "sast-test-npm/package.json",
-        "dependency": {
-          "package": {
-            "name": "ansi2html"
-          },
-          "version": "0.0.1"
-        }
-      },
-      "identifiers": [
-        {
-          "type": "npm",
-          "name": "NPM-51",
-          "value": "51",
-          "url": "https://www.npmjs.com/advisories/51"
-        }
-      ],
-      "links": [
-        {
-          "url": "https://nodesecurity.io/advisories/51"
-        }
-      ]
-    },
-    {
-      "category": "dependency_scanning",
       "message": "ruby-ffi DDL loading issue on Windows OS",
       "cve": "sast-sample-rails/Gemfile.lock:ffi:cve:CVE-2018-1000201",
       "severity": "High",
@@ -63,6 +31,38 @@
       "links": [
         {
           "url": "https://github.com/ffi/ffi/releases/tag/1.9.24"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "message": "Vulnerability in ansi2html",
+      "cve": "sast-test-npm/package.json:ansi2html:npm:51",
+      "severity": "High",
+      "scanner": {
+        "id": "retire.js",
+        "name": "Retire.js"
+      },
+      "location": {
+        "file": "sast-test-npm/package.json",
+        "dependency": {
+          "package": {
+            "name": "ansi2html"
+          },
+          "version": "0.0.1"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "npm",
+          "name": "NPM-51",
+          "value": "51",
+          "url": "https://www.npmjs.com/advisories/51"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://nodesecurity.io/advisories/51"
         }
       ]
     },
@@ -102,6 +102,39 @@
     {
       "category": "dependency_scanning",
       "message": "Loofah XSS Vulnerability",
+      "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-16468",
+      "severity": "Unknown",
+      "solution": "upgrade to \u003e= 2.2.3",
+      "scanner": {
+        "id": "bundler_audit",
+        "name": "bundler-audit"
+      },
+      "location": {
+        "file": "sast-sample-rails/Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "loofah"
+          },
+          "version": "2.1.1"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2018-16468",
+          "value": "CVE-2018-16468",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16468"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/flavorjones/loofah/issues/154"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "message": "Loofah XSS Vulnerability",
       "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-8048",
       "severity": "Unknown",
       "solution": "upgrade to \u003e= 2.2.1",
@@ -129,39 +162,6 @@
       "links": [
         {
           "url": "https://github.com/flavorjones/loofah/issues/144"
-        }
-      ]
-    },
-    {
-      "category": "dependency_scanning",
-      "message": "Nokogiri gem, via libxml2, is affected by multiple vulnerabilities",
-      "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-14404",
-      "severity": "Unknown",
-      "solution": "upgrade to \u003e= 1.8.5",
-      "scanner": {
-        "id": "bundler_audit",
-        "name": "bundler-audit"
-      },
-      "location": {
-        "file": "sast-sample-rails/Gemfile.lock",
-        "dependency": {
-          "package": {
-            "name": "nokogiri"
-          },
-          "version": "1.8.1"
-        }
-      },
-      "identifiers": [
-        {
-          "type": "cve",
-          "name": "CVE-2018-14404",
-          "value": "CVE-2018-14404",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14404"
-        }
-      ],
-      "links": [
-        {
-          "url": "https://github.com/sparklemotion/nokogiri/issues/1785"
         }
       ]
     },
@@ -195,6 +195,39 @@
       "links": [
         {
           "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "message": "Nokogiri gem, via libxml2, is affected by multiple vulnerabilities",
+      "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-14404",
+      "severity": "Unknown",
+      "solution": "upgrade to \u003e= 1.8.5",
+      "scanner": {
+        "id": "bundler_audit",
+        "name": "bundler-audit"
+      },
+      "location": {
+        "file": "sast-sample-rails/Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.8.1"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2018-14404",
+          "value": "CVE-2018-14404",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14404"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1785"
         }
       ]
     },
@@ -360,39 +393,6 @@
       "links": [
         {
           "url": "https://github.com/mishoo/UglifyJS2/issues/751"
-        }
-      ]
-    },
-    {
-      "category": "dependency_scanning",
-      "message": "Loofah XSS Vulnerability",
-      "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-16468",
-      "severity": "Unknown",
-      "solution": "upgrade to \u003e= 2.2.3",
-      "scanner": {
-        "id": "bundler_audit",
-        "name": "bundler-audit"
-      },
-      "location": {
-        "file": "sast-sample-rails/Gemfile.lock",
-        "dependency": {
-          "package": {
-            "name": "loofah"
-          },
-          "version": "2.1.1"
-        }
-      },
-      "identifiers": [
-        {
-          "type": "cve",
-          "name": "CVE-2018-16468",
-          "value": "CVE-2018-16468",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16468"
-        }
-      ],
-      "links": [
-        {
-          "url": "https://github.com/flavorjones/loofah/issues/154"
         }
       ]
     },
