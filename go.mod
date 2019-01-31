@@ -8,9 +8,9 @@ require (
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/urfave/cli v1.20.0
 	gitlab.com/gitlab-org/security-products/analyzers/bundler-audit v1.1.0
-	gitlab.com/gitlab-org/security-products/analyzers/common v1.9.1
-	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20181219150649-131c639c2176
-	gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20181219150649-131c639c2176
+	gitlab.com/gitlab-org/security-products/analyzers/common v1.9.2
+	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20190130000000-7e7754a36e12
+	gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20190130000000-7e7754a36e12
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium v1.1.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven v1.1.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python v1.1.0
