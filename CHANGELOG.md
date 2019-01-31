@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v1.4.4
+- Fix `null` report instead of empty JSON array when no vulnerabilities
+
 ## v1.4.3
 - Fix missing images gemnasium-python and gemnasimum-maven
 

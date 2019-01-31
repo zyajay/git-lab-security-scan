@@ -26,12 +26,11 @@ github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijb
 gitlab.com/gitlab-org/security-products/analyzers/bundler-audit v1.1.0 h1:7PUDvFmfz5QIICgOXZLvGFiDtL3y3oKebi2MwFiuoyw=
 gitlab.com/gitlab-org/security-products/analyzers/bundler-audit v1.1.0/go.mod h1:jtpR4xdhaHxlLnZoqVvBa4t8kDwp10GcTUI1iRuyx5g=
 gitlab.com/gitlab-org/security-products/analyzers/common v1.9.0/go.mod h1:XVRB2qsvmCbl0smHxSC8crPM+/ShFz6aHTygTVbYBR8=
-gitlab.com/gitlab-org/security-products/analyzers/common v1.9.1 h1:clWfWF/ZeSa95WnpYT562VBzlnY8MbpPaBFGgP758iQ=
-gitlab.com/gitlab-org/security-products/analyzers/common v1.9.1/go.mod h1:XVRB2qsvmCbl0smHxSC8crPM+/ShFz6aHTygTVbYBR8=
-gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20181219150649-131c639c2176 h1:sWPZrc0EsmyBiWZudtGzr9MF4pKoFHjbf/vzqdDRWwc=
-gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20181219150649-131c639c2176/go.mod h1:mklBlH2VAb+ungevwp0gQVC2ErR+Fa/YgvULUgt4/v4=
-gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20181219150649-131c639c2176 h1:6hw+b2iy+UPhJXovy6Iumg+SvTkZqjQt8nhfZTbH1GU=
-gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20181219150649-131c639c2176/go.mod h1:y+l4mFoWdZQeY2W5kfMaxO7tguaMNUEuKkbnnMk8RNg=
+gitlab.com/gitlab-org/security-products/analyzers/common v1.9.2/go.mod h1:XVRB2qsvmCbl0smHxSC8crPM+/ShFz6aHTygTVbYBR8=
+gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20190130000000-7e7754a36e12 h1:B98AhUXYoKKLrxWOammvXOdTpM75mIL3fBCCF2BcjWo=
+gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator v0.0.0-20190130000000-7e7754a36e12/go.mod h1:mklBlH2VAb+ungevwp0gQVC2ErR+Fa/YgvULUgt4/v4=
+gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20190130000000-7e7754a36e12 h1:R04pHpbPPUVv2bj6uhjFvackX/uAxSK9rP7SAKgIsLo=
+gitlab.com/gitlab-org/security-products/analyzers/common/table v0.0.0-20190130000000-7e7754a36e12/go.mod h1:y+l4mFoWdZQeY2W5kfMaxO7tguaMNUEuKkbnnMk8RNg=
 gitlab.com/gitlab-org/security-products/analyzers/gemnasium v1.1.0 h1:ba7Wt7D98VGYZ08nbnIIdwTZqpZylp19aQS8VfecsSQ=
 gitlab.com/gitlab-org/security-products/analyzers/gemnasium v1.1.0/go.mod h1:z9vGd1jVxzg+KJIHSn8M7yJ3aNbrJVbb/S50U4GXr/I=
 gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven v1.1.0 h1:oEyCYuQ2gnUKoxYP+dW12bUxkEyewPrZQk8eOyxTdXk=
