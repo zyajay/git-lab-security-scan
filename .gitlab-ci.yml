@@ -86,6 +86,8 @@ build edge:
 build tag:
   extends: .build
   before_script:
+    - echo "Checking that $CI_COMMIT_TAG is last in the changelog"
+    - test "$(grep '^## v' CHANGELOG.md |head -n 1)" = "## $CI_COMMIT_TAG"
     - export IMAGE_TAG=${CI_COMMIT_TAG/v/}
   variables:
     DS_ANALYZER_IMAGE_TAG: $MAJOR
