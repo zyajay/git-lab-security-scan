@@ -55,7 +55,7 @@ Read more about [customizing analyzers](./docs/analyzers.md#custom-analyzers).
 
 | Environment variable                 | Function |
 |--------------------------------------|----------|
-| DS_DOCKER_CLIENT_NEGOTIATION_TIMEOUT | Time limit for Docker client negotation |
+| DS_DOCKER_CLIENT_NEGOTIATION_TIMEOUT | Time limit for Docker client negotiation |
 | DS_PULL_ANALYZER_IMAGE_TIMEOUT       | Time limit when pulling the image of an analyzer |
 | DS_RUN_ANALYZER_TIMEOUT              | Time limit when running an analyzer |
 
@@ -104,7 +104,7 @@ The following table shows which languages and package managers are supported and
 
 ## Remote checks
 
-While some tools pull a local database to check vulnerabilities, some others require to send data to GitLab central servers to analyze them.
+While some tools pull a local database to check vulnerabilities, some others require sending data to GitLab central servers to analyze them.
 You can disable these tools by using the `DS_DISABLE_REMOTE_CHECKS` [environment variable](https://docs.gitlab.com/ee/ci/variables/README.html#gitlab-ci-yml-defined-variables).
 
 Here is the list of tools that are doing such remote checks and what kind of data they send:
@@ -112,7 +112,7 @@ Here is the list of tools that are doing such remote checks and what kind of dat
 **Gemnasium**
 
 * Gemnasium scans the dependencies of your project locally and sends a list of packages to GitLab central servers.
-* The servers return the list of known vulnerabilities for all the versions of these packages
+* The servers return the list of known vulnerabilities for all versions of these packages
 * Then the client picks up the relevant vulnerabilities by comparing with the versions of the packages that are used by the project.
 
 Gemnasium does *NOT* send the exact package versions your project relies on.
