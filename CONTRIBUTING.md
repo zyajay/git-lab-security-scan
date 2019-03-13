@@ -17,7 +17,7 @@ To get support for your particular problem please use the
 [getting help channels](https://about.gitlab.com/getting-help/).
 
 The [GitLab EE issue tracker on GitLab.com][ee-tracker] is the right place for bugs and feature proposals about Security Products. 
-Please use the ~"Security Products" label when opening a new issue to ensure it is quickly reviewed by the right people.
+Please use the ~"Secure" and ~"devops:secure" labels when opening a new issue to ensure it is quickly reviewed by the right people.
 
 **[Search the issue tracker][ee-tracker]** for similar entries before
 submitting your own, there's a good chance somebody else had the same issue or
