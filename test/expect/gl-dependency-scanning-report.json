@@ -68,6 +68,72 @@
     },
     {
       "category": "dependency_scanning",
+      "message": "File Content Disclosure in Action View",
+      "cve": "sast-sample-rails/Gemfile.lock:actionview:cve:CVE-2019-5418",
+      "severity": "Unknown",
+      "solution": "upgrade to ~\u003e 4.2.11, \u003e= 4.2.11.1, ~\u003e 5.0.7, \u003e= 5.0.7.2, ~\u003e 5.1.6, \u003e= 5.1.6.2, ~\u003e 5.2.2, \u003e= 5.2.2.1, \u003e= 6.0.0.beta3",
+      "scanner": {
+        "id": "bundler_audit",
+        "name": "bundler-audit"
+      },
+      "location": {
+        "file": "sast-sample-rails/Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "actionview"
+          },
+          "version": "5.0.6"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2019-5418",
+          "value": "CVE-2019-5418",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5418"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/pFRKI96Sm8Q"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "message": "Denial of Service Vulnerability in Action View",
+      "cve": "sast-sample-rails/Gemfile.lock:actionview:cve:CVE-2019-5419",
+      "severity": "Unknown",
+      "solution": "upgrade to \u003e= 6.0.0.beta3, ~\u003e 5.2.2, \u003e= 5.2.2.1, ~\u003e 5.1.6, \u003e= 5.1.6.2, ~\u003e 5.0.7, \u003e= 5.0.7.2, ~\u003e 4.2.11, \u003e= 4.2.11.1",
+      "scanner": {
+        "id": "bundler_audit",
+        "name": "bundler-audit"
+      },
+      "location": {
+        "file": "sast-sample-rails/Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "actionview"
+          },
+          "version": "5.0.6"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2019-5419",
+          "value": "CVE-2019-5419",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5419"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/GN7w9fFAQeI"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
       "message": "Broken Access Control vulnerability in Active Job",
       "cve": "sast-sample-rails/Gemfile.lock:activejob:cve:CVE-2018-16476",
       "severity": "Unknown",
