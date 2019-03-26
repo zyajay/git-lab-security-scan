@@ -41,6 +41,7 @@ Dependency Scanning can be configured using environment variables.
 | DS_ANALYZER_IMAGE_PREFIX     | Override the name of the Docker registry providing the default images (proxy). |
 | DS_ANALYZER_IMAGE_TAG        | Override the Docker tag of the default images. |
 | DS_DEFAULT_ANALYZERS         | Override the names of default images. |
+| DS_PULL_ANALYZER_IMAGES      | Pull the images from the Docker registry (set to 0 to disable) |
 
 Read more about [customizing analyzers](./docs/analyzers.md#custom-analyzers).
 
