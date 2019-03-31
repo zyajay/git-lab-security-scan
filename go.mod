@@ -11,11 +11,11 @@ require (
 	gitlab.com/gitlab-org/security-products/analyzers/bundler-audit/v2 v2.0.0
 	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator/v2 v2.0.0-20190130152733-9f0ad391d73c
 	gitlab.com/gitlab-org/security-products/analyzers/common/table/v2 v2.0.0-20190130152733-9f0ad391d73c
-	gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.1.3
+	gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.1.5
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2 v2.0.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python/v2 v2.0.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2 v2.0.0
-	gitlab.com/gitlab-org/security-products/analyzers/retire.js/v2 v2.0.0
+	gitlab.com/gitlab-org/security-products/analyzers/retire.js/v2 v2.0.2
 	golang.org/x/net v0.0.0-20181207154023-610586996380 // indirect
 	golang.org/x/sys v0.0.0-20181218192612-074acd46bca6 // indirect
 )
