@@ -132,6 +132,11 @@ tag latest:
   only:
     - tags
 
+11-11-stable:
+  extends: .deploy
+  variables:
+    DOCKERFILE: Dockerfile.v2
+
 11-10-stable:
   extends: .deploy
   variables:
