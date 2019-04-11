@@ -137,7 +137,7 @@
       "message": "Broken Access Control vulnerability in Active Job",
       "cve": "sast-sample-rails/Gemfile.lock:activejob:cve:CVE-2018-16476",
       "severity": "Unknown",
-      "solution": "upgrade to ~\u003e 4.2.11, ~\u003e 5.0.7.1, ~\u003e 5.1.6.1, \u003e= 5.2.1.1",
+      "solution": "upgrade to ~\u003e 4.2.11, ~\u003e 5.0.7.1, ~\u003e 5.1.6.1, ~\u003e 5.1.7, \u003e= 5.2.1.1",
       "scanner": {
         "id": "bundler_audit",
         "name": "bundler-audit"
