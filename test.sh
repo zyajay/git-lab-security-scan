@@ -11,6 +11,7 @@ expect="test/expect/gl-dependency-scanning-report.json"
 
 export DS_DEFAULT_ANALYZERS=${DS_DEFAULT_ANALYZERS:-"bundler-audit,retire.js,gemnasium"}
 export DS_ANALYZER_IMAGE_TAG=${DS_ANALYZER_IMAGE_TAG:-"2"}
+export DS_EXCLUDED_PATHS="ignored,*-excluded"
 
 # Project found, artifact generated (bind mount)
 desc="Generate expected artifact (bind mount, pull images)"
