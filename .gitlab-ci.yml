@@ -15,7 +15,7 @@ stages:
   - deploy
 
 .go:
-  image: golang:1.11.3
+  image: golang:1.11.5
   stage: go
   variables:
     GO111MODULE: "on"

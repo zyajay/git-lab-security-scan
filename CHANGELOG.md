@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.2.0
+- Add `DS_EXCLUDED_PATHS` option to exclude paths from report.
+
 ## v2.1.3
 - Fix unstable vulnerabilities ordering
 

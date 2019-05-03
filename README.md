@@ -52,6 +52,15 @@ Read more about [customizing analyzers](./docs/analyzers.md#custom-analyzers).
 | DS_DISABLE_REMOTE_CHECKS       | Do not send any data to GitLab (Used in the dependency version checker, see below) |
 | DEP_SCAN_DISABLE_REMOTE_CHECKS | Deprecated. Renamed to `DS_DISABLE_REMOTE_CHECKS `                                 |
 
+### Vulnerability filters
+
+| Environment variable  | Default   | Function |
+|-----------------------|-----------|----------|
+| DS_EXCLUDED_PATHS     |           | Exclude vulnerabilities from output based on the paths. |
+
+`DS_EXCLUDED_PATHS` is a comma-separated list of patterns.
+Patterns can be globs, file or folder paths. Parent directories will also match patterns.
+
 ### Timeouts
 
 | Environment variable                 | Function |
