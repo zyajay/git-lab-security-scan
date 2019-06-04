@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.3.0
+- List the dependency files and their dependencies (!31)
+
 ## v2.2.0
 - Add `DS_EXCLUDED_PATHS` option to exclude paths from report.
 
