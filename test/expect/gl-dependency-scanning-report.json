@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "vulnerabilities": [
     {
       "category": "dependency_scanning",
@@ -531,5 +531,799 @@
       ]
     }
   ],
-  "remediations": []
+  "remediations": [],
+  "dependency_files": [
+    {
+      "path": "sast-sample-rails/Gemfile.lock",
+      "package_manager": "bundler",
+      "dependencies": [
+        {
+          "package": {
+            "name": "actioncable"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "actionmailer"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "actionpack"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "actionview"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activejob"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activemodel"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activerecord"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activesupport"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "arel"
+          },
+          "version": "7.1.4"
+        },
+        {
+          "package": {
+            "name": "bindex"
+          },
+          "version": "0.5.0"
+        },
+        {
+          "package": {
+            "name": "builder"
+          },
+          "version": "3.2.3"
+        },
+        {
+          "package": {
+            "name": "byebug"
+          },
+          "version": "9.1.0"
+        },
+        {
+          "package": {
+            "name": "coffee-rails"
+          },
+          "version": "4.2.2"
+        },
+        {
+          "package": {
+            "name": "coffee-script"
+          },
+          "version": "2.4.1"
+        },
+        {
+          "package": {
+            "name": "coffee-script-source"
+          },
+          "version": "1.12.2"
+        },
+        {
+          "package": {
+            "name": "concurrent-ruby"
+          },
+          "version": "1.0.5"
+        },
+        {
+          "package": {
+            "name": "crass"
+          },
+          "version": "1.0.2"
+        },
+        {
+          "package": {
+            "name": "erubis"
+          },
+          "version": "2.7.0"
+        },
+        {
+          "package": {
+            "name": "execjs"
+          },
+          "version": "2.7.0"
+        },
+        {
+          "package": {
+            "name": "ffi"
+          },
+          "version": "1.9.18"
+        },
+        {
+          "package": {
+            "name": "globalid"
+          },
+          "version": "0.4.0"
+        },
+        {
+          "package": {
+            "name": "i18n"
+          },
+          "version": "0.8.6"
+        },
+        {
+          "package": {
+            "name": "jbuilder"
+          },
+          "version": "2.7.0"
+        },
+        {
+          "package": {
+            "name": "jquery-rails"
+          },
+          "version": "4.3.1"
+        },
+        {
+          "package": {
+            "name": "json"
+          },
+          "version": "2.1.0"
+        },
+        {
+          "package": {
+            "name": "listen"
+          },
+          "version": "3.0.8"
+        },
+        {
+          "package": {
+            "name": "loofah"
+          },
+          "version": "2.1.1"
+        },
+        {
+          "package": {
+            "name": "mail"
+          },
+          "version": "2.6.6"
+        },
+        {
+          "package": {
+            "name": "method_source"
+          },
+          "version": "0.9.0"
+        },
+        {
+          "package": {
+            "name": "mime-types"
+          },
+          "version": "3.1"
+        },
+        {
+          "package": {
+            "name": "mime-types-data"
+          },
+          "version": "3.2016.0521"
+        },
+        {
+          "package": {
+            "name": "mini_portile2"
+          },
+          "version": "2.3.0"
+        },
+        {
+          "package": {
+            "name": "minitest"
+          },
+          "version": "5.10.3"
+        },
+        {
+          "package": {
+            "name": "multi_json"
+          },
+          "version": "1.12.2"
+        },
+        {
+          "package": {
+            "name": "nio4r"
+          },
+          "version": "2.1.0"
+        },
+        {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.8.1"
+        },
+        {
+          "package": {
+            "name": "puma"
+          },
+          "version": "3.10.0"
+        },
+        {
+          "package": {
+            "name": "rack"
+          },
+          "version": "2.0.3"
+        },
+        {
+          "package": {
+            "name": "rack-test"
+          },
+          "version": "0.6.3"
+        },
+        {
+          "package": {
+            "name": "rails"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "rails-dom-testing"
+          },
+          "version": "2.0.3"
+        },
+        {
+          "package": {
+            "name": "rails-html-sanitizer"
+          },
+          "version": "1.0.3"
+        },
+        {
+          "package": {
+            "name": "railties"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "rake"
+          },
+          "version": "12.1.0"
+        },
+        {
+          "package": {
+            "name": "rb-fsevent"
+          },
+          "version": "0.10.2"
+        },
+        {
+          "package": {
+            "name": "rb-inotify"
+          },
+          "version": "0.9.10"
+        },
+        {
+          "package": {
+            "name": "sass"
+          },
+          "version": "3.5.2"
+        },
+        {
+          "package": {
+            "name": "sass-listen"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "name": "sass-rails"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "spring"
+          },
+          "version": "2.0.2"
+        },
+        {
+          "package": {
+            "name": "spring-watcher-listen"
+          },
+          "version": "2.0.1"
+        },
+        {
+          "package": {
+            "name": "sprockets"
+          },
+          "version": "3.7.1"
+        },
+        {
+          "package": {
+            "name": "sprockets-rails"
+          },
+          "version": "3.2.1"
+        },
+        {
+          "package": {
+            "name": "sqlite3"
+          },
+          "version": "1.3.13"
+        },
+        {
+          "package": {
+            "name": "thor"
+          },
+          "version": "0.20.0"
+        },
+        {
+          "package": {
+            "name": "thread_safe"
+          },
+          "version": "0.3.6"
+        },
+        {
+          "package": {
+            "name": "tilt"
+          },
+          "version": "2.0.8"
+        },
+        {
+          "package": {
+            "name": "turbolinks"
+          },
+          "version": "5.0.1"
+        },
+        {
+          "package": {
+            "name": "turbolinks-source"
+          },
+          "version": "5.0.3"
+        },
+        {
+          "package": {
+            "name": "tzinfo"
+          },
+          "version": "1.2.3"
+        },
+        {
+          "package": {
+            "name": "uglifier"
+          },
+          "version": "2.3.2"
+        },
+        {
+          "package": {
+            "name": "web-console"
+          },
+          "version": "3.5.1"
+        },
+        {
+          "package": {
+            "name": "websocket-driver"
+          },
+          "version": "0.6.5"
+        },
+        {
+          "package": {
+            "name": "websocket-extensions"
+          },
+          "version": "0.1.2"
+        }
+      ]
+    },
+    {
+      "path": "sast-sample-rails-excluded/Gemfile.lock",
+      "package_manager": "bundler",
+      "dependencies": [
+        {
+          "package": {
+            "name": "actioncable"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "actionmailer"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "actionpack"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "actionview"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activejob"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activemodel"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activerecord"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "activesupport"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "arel"
+          },
+          "version": "7.1.4"
+        },
+        {
+          "package": {
+            "name": "bindex"
+          },
+          "version": "0.5.0"
+        },
+        {
+          "package": {
+            "name": "builder"
+          },
+          "version": "3.2.3"
+        },
+        {
+          "package": {
+            "name": "byebug"
+          },
+          "version": "9.1.0"
+        },
+        {
+          "package": {
+            "name": "coffee-rails"
+          },
+          "version": "4.2.2"
+        },
+        {
+          "package": {
+            "name": "coffee-script"
+          },
+          "version": "2.4.1"
+        },
+        {
+          "package": {
+            "name": "coffee-script-source"
+          },
+          "version": "1.12.2"
+        },
+        {
+          "package": {
+            "name": "concurrent-ruby"
+          },
+          "version": "1.0.5"
+        },
+        {
+          "package": {
+            "name": "crass"
+          },
+          "version": "1.0.2"
+        },
+        {
+          "package": {
+            "name": "erubis"
+          },
+          "version": "2.7.0"
+        },
+        {
+          "package": {
+            "name": "execjs"
+          },
+          "version": "2.7.0"
+        },
+        {
+          "package": {
+            "name": "ffi"
+          },
+          "version": "1.9.18"
+        },
+        {
+          "package": {
+            "name": "globalid"
+          },
+          "version": "0.4.0"
+        },
+        {
+          "package": {
+            "name": "i18n"
+          },
+          "version": "0.8.6"
+        },
+        {
+          "package": {
+            "name": "jbuilder"
+          },
+          "version": "2.7.0"
+        },
+        {
+          "package": {
+            "name": "jquery-rails"
+          },
+          "version": "4.3.1"
+        },
+        {
+          "package": {
+            "name": "json"
+          },
+          "version": "2.1.0"
+        },
+        {
+          "package": {
+            "name": "listen"
+          },
+          "version": "3.0.8"
+        },
+        {
+          "package": {
+            "name": "loofah"
+          },
+          "version": "2.1.1"
+        },
+        {
+          "package": {
+            "name": "mail"
+          },
+          "version": "2.6.6"
+        },
+        {
+          "package": {
+            "name": "method_source"
+          },
+          "version": "0.9.0"
+        },
+        {
+          "package": {
+            "name": "mime-types"
+          },
+          "version": "3.1"
+        },
+        {
+          "package": {
+            "name": "mime-types-data"
+          },
+          "version": "3.2016.0521"
+        },
+        {
+          "package": {
+            "name": "mini_portile2"
+          },
+          "version": "2.3.0"
+        },
+        {
+          "package": {
+            "name": "minitest"
+          },
+          "version": "5.10.3"
+        },
+        {
+          "package": {
+            "name": "multi_json"
+          },
+          "version": "1.12.2"
+        },
+        {
+          "package": {
+            "name": "nio4r"
+          },
+          "version": "2.1.0"
+        },
+        {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.8.1"
+        },
+        {
+          "package": {
+            "name": "puma"
+          },
+          "version": "3.10.0"
+        },
+        {
+          "package": {
+            "name": "rack"
+          },
+          "version": "2.0.3"
+        },
+        {
+          "package": {
+            "name": "rack-test"
+          },
+          "version": "0.6.3"
+        },
+        {
+          "package": {
+            "name": "rails"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "rails-dom-testing"
+          },
+          "version": "2.0.3"
+        },
+        {
+          "package": {
+            "name": "rails-html-sanitizer"
+          },
+          "version": "1.0.3"
+        },
+        {
+          "package": {
+            "name": "railties"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "rake"
+          },
+          "version": "12.1.0"
+        },
+        {
+          "package": {
+            "name": "rb-fsevent"
+          },
+          "version": "0.10.2"
+        },
+        {
+          "package": {
+            "name": "rb-inotify"
+          },
+          "version": "0.9.10"
+        },
+        {
+          "package": {
+            "name": "sass"
+          },
+          "version": "3.5.2"
+        },
+        {
+          "package": {
+            "name": "sass-listen"
+          },
+          "version": "4.0.0"
+        },
+        {
+          "package": {
+            "name": "sass-rails"
+          },
+          "version": "5.0.6"
+        },
+        {
+          "package": {
+            "name": "spring"
+          },
+          "version": "2.0.2"
+        },
+        {
+          "package": {
+            "name": "spring-watcher-listen"
+          },
+          "version": "2.0.1"
+        },
+        {
+          "package": {
+            "name": "sprockets"
+          },
+          "version": "3.7.1"
+        },
+        {
+          "package": {
+            "name": "sprockets-rails"
+          },
+          "version": "3.2.1"
+        },
+        {
+          "package": {
+            "name": "sqlite3"
+          },
+          "version": "1.3.13"
+        },
+        {
+          "package": {
+            "name": "thor"
+          },
+          "version": "0.20.0"
+        },
+        {
+          "package": {
+            "name": "thread_safe"
+          },
+          "version": "0.3.6"
+        },
+        {
+          "package": {
+            "name": "tilt"
+          },
+          "version": "2.0.8"
+        },
+        {
+          "package": {
+            "name": "turbolinks"
+          },
+          "version": "5.0.1"
+        },
+        {
+          "package": {
+            "name": "turbolinks-source"
+          },
+          "version": "5.0.3"
+        },
+        {
+          "package": {
+            "name": "tzinfo"
+          },
+          "version": "1.2.3"
+        },
+        {
+          "package": {
+            "name": "uglifier"
+          },
+          "version": "2.3.2"
+        },
+        {
+          "package": {
+            "name": "web-console"
+          },
+          "version": "3.5.1"
+        },
+        {
+          "package": {
+            "name": "websocket-driver"
+          },
+          "version": "0.6.5"
+        },
+        {
+          "package": {
+            "name": "websocket-extensions"
+          },
+          "version": "0.1.2"
+        }
+      ]
+    },
+    {
+      "path": "sast-test-npm/package-lock.json",
+      "package_manager": "npm",
+      "dependencies": [
+        {
+          "package": {
+            "name": "ansi2html"
+          },
+          "version": "0.0.1"
+        }
+      ]
+    }
+  ]
 }
