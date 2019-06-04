@@ -534,7 +534,7 @@
   "remediations": [],
   "dependency_files": [
     {
-      "path": "sast-sample-rails/Gemfile.lock",
+      "path": "sast-sample-rails-excluded/Gemfile.lock",
       "package_manager": "bundler",
       "dependencies": [
         {
@@ -924,7 +924,7 @@
       ]
     },
     {
-      "path": "sast-sample-rails-excluded/Gemfile.lock",
+      "path": "sast-sample-rails/Gemfile.lock",
       "package_manager": "bundler",
       "dependencies": [
         {

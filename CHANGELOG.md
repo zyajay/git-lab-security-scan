@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.3.1
+- Sort dependency files and dependencies when merging reports (!32)
+
 ## v2.3.0
 - List the dependency files and their dependencies (!31)
 
