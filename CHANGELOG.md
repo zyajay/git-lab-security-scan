@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.3.2
+- Fix parsing of npm-shrinkwrap.json files
+
 ## v2.3.1
 - Sort dependency files and dependencies when merging reports (!32)
 
