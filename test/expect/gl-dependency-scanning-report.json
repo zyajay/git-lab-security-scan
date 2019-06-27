@@ -501,7 +501,7 @@
       "message": "Regular Expression Denial of Service in ansi2html",
       "description": "ansi2html is vulnerable to regular expression denial of service (ReDoS) when certain types of user input is passed in which can lead to long processing time that make the application unresponsive.",
       "cve": "sast-test-npm/package-lock.json:ansi2html:gemnasium:077d88ec-85d1-414f-a66c-fa1819bd1fdc",
-      "severity": "Unknown",
+      "severity": "High",
       "solution": "Do not pass untrusted input to ansi2html or limit the size of the user input to limit the impact.",
       "scanner": {
         "id": "gemnasium",
