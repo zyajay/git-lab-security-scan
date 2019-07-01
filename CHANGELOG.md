@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.3.3
+- Fix `DS_EXCLUDED_PATHS` not applied to dependency files (!35)
+
 ## v2.3.2
 - Fix parsing of npm-shrinkwrap.json files
 
