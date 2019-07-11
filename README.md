@@ -31,47 +31,7 @@ Some tools require to be able to launch Docker containers to scan your applicati
 
 ## Settings
 
-Dependency Scanning can be configured using environment variables.
-
-### Docker images
-
-| Environment variable         | Function |
-|------------------------------|----------|
-| DS_ANALYZER_IMAGES           | Comma separated list of custom images. Default images are still enabled.|
-| DS_ANALYZER_IMAGE_PREFIX     | Override the name of the Docker registry providing the default images (proxy). |
-| DS_ANALYZER_IMAGE_TAG        | Override the Docker tag of the default images. |
-| DS_DEFAULT_ANALYZERS         | Override the names of default images. |
-| DS_PULL_ANALYZER_IMAGES      | Pull the images from the Docker registry (set to 0 to disable) |
-
-Read more about [customizing analyzers](./docs/analyzers.md#custom-analyzers).
-
-### Remote checks
-
-| Name                           | Function                                                                           |
-|--------------------------------|------------------------------------------------------------------------------------|
-| DS_DISABLE_REMOTE_CHECKS       | Do not send any data to GitLab (Used in the dependency version checker, see below) |
-| DEP_SCAN_DISABLE_REMOTE_CHECKS | Deprecated. Renamed to `DS_DISABLE_REMOTE_CHECKS `                                 |
-
-### Vulnerability filters
-
-| Environment variable  | Default   | Function |
-|-----------------------|-----------|----------|
-| DS_EXCLUDED_PATHS     |           | Exclude vulnerabilities from output based on the paths. |
-
-`DS_EXCLUDED_PATHS` is a comma-separated list of patterns.
-Patterns can be globs, file or folder paths. Parent directories will also match patterns.
-
-### Timeouts
-
-| Environment variable                 | Function |
-|--------------------------------------|----------|
-| DS_DOCKER_CLIENT_NEGOTIATION_TIMEOUT | Time limit for Docker client negotiation |
-| DS_PULL_ANALYZER_IMAGE_TIMEOUT       | Time limit when pulling the image of an analyzer |
-| DS_RUN_ANALYZER_TIMEOUT              | Time limit when running an analyzer |
-
-Timeouts are parsed using Go's [`ParseDuration`](https://golang.org/pkg/time/#ParseDuration).
-Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
-Examples: "300ms", "1.5h" or "2h45m".
+The settings are documented in [GitLab CE](https://docs.gitlab.com/ee/user/application_security/dependency_scanning/index.html).
 
 ## Development
 
@@ -98,34 +58,6 @@ To run the integration tests:
 ```sh
 ./test.sh
 ```
-
-
-## Supported languages and package managers
-
-The following table shows which languages and package managers are supported and which tools are used.
-
-| Language (package managers)                                                 | Scan tool                                                                                                                                 | Introduced in GitLab Version |
-|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| JavaScript ([npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/en/)) | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general), [Retire.js](https://retirejs.github.io/retire.js)         | 10.5 |
-| Python ([pip](https://pip.pypa.io/en/stable/))                              | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general)                                                            | 10.5 |
-| Ruby ([gem](https://rubygems.org/))                                         | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general), [bundler-audit](https://github.com/rubysec/bundler-audit) | 10.5 |
-| Java ([Maven](https://maven.apache.org/))                                   | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general),                                                           | 10.5 |
-| PHP ([Composer](https://getcomposer.org/))                                  | [gemnasium](https://gitlab.com/gitlab-org/security-products/gemnasium/general)                                                            | 10.5 |
-
-## Remote checks
-
-While some tools pull a local database to check vulnerabilities, some others require sending data to GitLab central servers to analyze them.
-You can disable these tools by using the `DS_DISABLE_REMOTE_CHECKS` [environment variable](https://docs.gitlab.com/ee/ci/variables/README.html#gitlab-ci-yml-defined-variables).
-
-Here is the list of tools that are doing such remote checks and what kind of data they send:
-
-**Gemnasium**
-
-* Gemnasium scans the dependencies of your project locally and sends a list of packages to GitLab central servers.
-* The servers return the list of known vulnerabilities for all versions of these packages
-* Then the client picks up the relevant vulnerabilities by comparing with the versions of the packages that are used by the project.
-
-Gemnasium does *NOT* send the exact package versions your project relies on.
 
 ## Versioning and release process
 
