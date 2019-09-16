@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.4.0
+- Add `setup.py` support (!40)
+
 ## v2.3.3
 - Fix `DS_EXCLUDED_PATHS` not applied to dependency files (!35)
 
