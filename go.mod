@@ -15,8 +15,8 @@ require (
 	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/urfave/cli v1.20.0
 	gitlab.com/gitlab-org/security-products/analyzers/bundler-audit/v2 v2.0.0
-	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator/v2 v2.0.0-0.20190628143551-be881429535b
-	gitlab.com/gitlab-org/security-products/analyzers/common/table/v2 v2.0.0-0.20190628143551-be881429535b
+	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator/v2 v2.0.0-0.20190628143551-096a60fffe7f51f23716e4602a76ccd0882c24c7
+	gitlab.com/gitlab-org/security-products/analyzers/common/table/v2 v2.0.0-0.20190628143551-096a60fffe7f51f23716e4602a76ccd0882c24c7
 	gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.4.2
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2 v2.2.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python/v2 v2.3.0
