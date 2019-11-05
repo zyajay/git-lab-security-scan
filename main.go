@@ -33,9 +33,10 @@ func main() {
 	app.Author = "GitLab"
 
 	opts := orchestrator.Options{
-		EnvVarPrefix: "DS_",
-		ArtifactName: "gl-dependency-scanning-report.json",
-		PostWrite:    renderTable,
+		EnvVarPrefix:            "DS_",
+		ArtifactName:            "gl-dependency-scanning-report.json",
+		VulnerabilitiesAsReport: true,
+		PostWrite:               renderTable,
 	}
 
 	app.Flags = orchestrator.MakeFlags(opts)
