@@ -34,38 +34,6 @@
   },
   {
     "category": "dependency_scanning",
-    "message": "Vulnerability in ansi2html",
-    "cve": "sast-test-npm/package.json:ansi2html:npm:51",
-    "severity": "High",
-    "scanner": {
-      "id": "retire.js",
-      "name": "Retire.js"
-    },
-    "location": {
-      "file": "sast-test-npm/package.json",
-      "dependency": {
-        "package": {
-          "name": "ansi2html"
-        },
-        "version": "0.0.1"
-      }
-    },
-    "identifiers": [
-      {
-        "type": "npm",
-        "name": "NPM-51",
-        "value": "51",
-        "url": "https://www.npmjs.com/advisories/51"
-      }
-    ],
-    "links": [
-      {
-        "url": "https://nodesecurity.io/advisories/51"
-      }
-    ]
-  },
-  {
-    "category": "dependency_scanning",
     "message": "Nokogiri Command Injection Vulnerability via Nokogiri::CSS::Tokenizer#load_file",
     "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2019-5477",
     "severity": "High",
@@ -94,6 +62,38 @@
     "links": [
       {
         "url": "https://github.com/sparklemotion/nokogiri/issues/1915"
+      }
+    ]
+  },
+  {
+    "category": "dependency_scanning",
+    "message": "Vulnerability in ansi2html",
+    "cve": "sast-test-npm/package.json:ansi2html:npm:51",
+    "severity": "High",
+    "scanner": {
+      "id": "retire.js",
+      "name": "Retire.js"
+    },
+    "location": {
+      "file": "sast-test-npm/package.json",
+      "dependency": {
+        "package": {
+          "name": "ansi2html"
+        },
+        "version": "0.0.1"
+      }
+    },
+    "identifiers": [
+      {
+        "type": "npm",
+        "name": "NPM-51",
+        "value": "51",
+        "url": "https://www.npmjs.com/advisories/51"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://nodesecurity.io/advisories/51"
       }
     ]
   },
@@ -132,10 +132,10 @@
   },
   {
     "category": "dependency_scanning",
-    "message": "Loofah XSS Vulnerability",
-    "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-8048",
+    "message": "Denial of Service Vulnerability in Action View",
+    "cve": "sast-sample-rails/Gemfile.lock:actionview:cve:CVE-2019-5419",
     "severity": "Unknown",
-    "solution": "upgrade to \u003e= 2.2.1",
+    "solution": "upgrade to \u003e= 6.0.0.beta3, ~\u003e 5.2.2, \u003e= 5.2.2.1, ~\u003e 5.1.6, \u003e= 5.1.6.2, ~\u003e 5.0.7, \u003e= 5.0.7.2, ~\u003e 4.2.11, \u003e= 4.2.11.1",
     "scanner": {
       "id": "bundler_audit",
       "name": "bundler-audit"
@@ -144,22 +144,55 @@
       "file": "sast-sample-rails/Gemfile.lock",
       "dependency": {
         "package": {
-          "name": "loofah"
+          "name": "actionview"
         },
-        "version": "2.1.1"
+        "version": "5.0.6"
       }
     },
     "identifiers": [
       {
         "type": "cve",
-        "name": "CVE-2018-8048",
-        "value": "CVE-2018-8048",
-        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
+        "name": "CVE-2019-5419",
+        "value": "CVE-2019-5419",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5419"
       }
     ],
     "links": [
       {
-        "url": "https://github.com/flavorjones/loofah/issues/144"
+        "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/GN7w9fFAQeI"
+      }
+    ]
+  },
+  {
+    "category": "dependency_scanning",
+    "message": "Broken Access Control vulnerability in Active Job",
+    "cve": "sast-sample-rails/Gemfile.lock:activejob:cve:CVE-2018-16476",
+    "severity": "Unknown",
+    "solution": "upgrade to ~\u003e 4.2.11, ~\u003e 5.0.7.1, ~\u003e 5.1.6.1, ~\u003e 5.1.7, \u003e= 5.2.1.1",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "activejob"
+        },
+        "version": "5.0.6"
+      }
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-16476",
+        "value": "CVE-2018-16476",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16476"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw"
       }
     ]
   },
@@ -199,6 +232,39 @@
   {
     "category": "dependency_scanning",
     "message": "Loofah XSS Vulnerability",
+    "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2018-8048",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 2.2.1",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "loofah"
+        },
+        "version": "2.1.1"
+      }
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2018-8048",
+        "value": "CVE-2018-8048",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/flavorjones/loofah/issues/144"
+      }
+    ]
+  },
+  {
+    "category": "dependency_scanning",
+    "message": "Loofah XSS Vulnerability",
     "cve": "sast-sample-rails/Gemfile.lock:loofah:cve:CVE-2019-15587",
     "severity": "Unknown",
     "solution": "upgrade to \u003e= 2.3.1",
@@ -231,10 +297,10 @@
   },
   {
     "category": "dependency_scanning",
-    "message": "Revert libxml2 behavior in Nokogiri gem that could cause XSS",
-    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-8048",
+    "message": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2017-15412",
     "severity": "Unknown",
-    "solution": "upgrade to \u003e= 1.8.3",
+    "solution": "upgrade to \u003e= 1.8.2",
     "scanner": {
       "id": "bundler_audit",
       "name": "bundler-audit"
@@ -251,80 +317,14 @@
     "identifiers": [
       {
         "type": "cve",
-        "name": "CVE-2018-8048",
-        "value": "CVE-2018-8048",
-        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
+        "name": "CVE-2017-15412",
+        "value": "CVE-2017-15412",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
       }
     ],
     "links": [
       {
-        "url": "https://github.com/sparklemotion/nokogiri/pull/1746"
-      }
-    ]
-  },
-  {
-    "category": "dependency_scanning",
-    "message": "Broken Access Control vulnerability in Active Job",
-    "cve": "sast-sample-rails/Gemfile.lock:activejob:cve:CVE-2018-16476",
-    "severity": "Unknown",
-    "solution": "upgrade to ~\u003e 4.2.11, ~\u003e 5.0.7.1, ~\u003e 5.1.6.1, ~\u003e 5.1.7, \u003e= 5.2.1.1",
-    "scanner": {
-      "id": "bundler_audit",
-      "name": "bundler-audit"
-    },
-    "location": {
-      "file": "sast-sample-rails/Gemfile.lock",
-      "dependency": {
-        "package": {
-          "name": "activejob"
-        },
-        "version": "5.0.6"
-      }
-    },
-    "identifiers": [
-      {
-        "type": "cve",
-        "name": "CVE-2018-16476",
-        "value": "CVE-2018-16476",
-        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16476"
-      }
-    ],
-    "links": [
-      {
-        "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/FL4dSdzr2zw"
-      }
-    ]
-  },
-  {
-    "category": "dependency_scanning",
-    "message": "Nokogiri gem, via libxslt, is affected by improper access control vulnerability",
-    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2019-11068",
-    "severity": "Unknown",
-    "solution": "upgrade to \u003e= 1.10.3",
-    "scanner": {
-      "id": "bundler_audit",
-      "name": "bundler-audit"
-    },
-    "location": {
-      "file": "sast-sample-rails/Gemfile.lock",
-      "dependency": {
-        "package": {
-          "name": "nokogiri"
-        },
-        "version": "1.8.1"
-      }
-    },
-    "identifiers": [
-      {
-        "type": "cve",
-        "name": "CVE-2019-11068",
-        "value": "CVE-2019-11068",
-        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068"
-      }
-    ],
-    "links": [
-      {
-        "url": "https://github.com/sparklemotion/nokogiri/issues/1892"
+        "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
       }
     ]
   },
@@ -363,10 +363,10 @@
   },
   {
     "category": "dependency_scanning",
-    "message": "Nokogiri gem, via libxml, is affected by DoS vulnerabilities",
-    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2017-15412",
+    "message": "Revert libxml2 behavior in Nokogiri gem that could cause XSS",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2018-8048",
     "severity": "Unknown",
-    "solution": "upgrade to \u003e= 1.8.2",
+    "solution": "upgrade to \u003e= 1.8.3",
     "scanner": {
       "id": "bundler_audit",
       "name": "bundler-audit"
@@ -383,14 +383,47 @@
     "identifiers": [
       {
         "type": "cve",
-        "name": "CVE-2017-15412",
-        "value": "CVE-2017-15412",
-        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+        "name": "CVE-2018-8048",
+        "value": "CVE-2018-8048",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8048"
       }
     ],
     "links": [
       {
-        "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+        "url": "https://github.com/sparklemotion/nokogiri/pull/1746"
+      }
+    ]
+  },
+  {
+    "category": "dependency_scanning",
+    "message": "Nokogiri gem, via libxslt, is affected by improper access control vulnerability",
+    "cve": "sast-sample-rails/Gemfile.lock:nokogiri:cve:CVE-2019-11068",
+    "severity": "Unknown",
+    "solution": "upgrade to \u003e= 1.10.3",
+    "scanner": {
+      "id": "bundler_audit",
+      "name": "bundler-audit"
+    },
+    "location": {
+      "file": "sast-sample-rails/Gemfile.lock",
+      "dependency": {
+        "package": {
+          "name": "nokogiri"
+        },
+        "version": "1.8.1"
+      }
+    },
+    "identifiers": [
+      {
+        "type": "cve",
+        "name": "CVE-2019-11068",
+        "value": "CVE-2019-11068",
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://github.com/sparklemotion/nokogiri/issues/1892"
       }
     ]
   },
@@ -523,39 +556,6 @@
     "links": [
       {
         "url": "https://github.com/mishoo/UglifyJS2/issues/751"
-      }
-    ]
-  },
-  {
-    "category": "dependency_scanning",
-    "message": "Denial of Service Vulnerability in Action View",
-    "cve": "sast-sample-rails/Gemfile.lock:actionview:cve:CVE-2019-5419",
-    "severity": "Unknown",
-    "solution": "upgrade to \u003e= 6.0.0.beta3, ~\u003e 5.2.2, \u003e= 5.2.2.1, ~\u003e 5.1.6, \u003e= 5.1.6.2, ~\u003e 5.0.7, \u003e= 5.0.7.2, ~\u003e 4.2.11, \u003e= 4.2.11.1",
-    "scanner": {
-      "id": "bundler_audit",
-      "name": "bundler-audit"
-    },
-    "location": {
-      "file": "sast-sample-rails/Gemfile.lock",
-      "dependency": {
-        "package": {
-          "name": "actionview"
-        },
-        "version": "5.0.6"
-      }
-    },
-    "identifiers": [
-      {
-        "type": "cve",
-        "name": "CVE-2019-5419",
-        "value": "CVE-2019-5419",
-        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5419"
-      }
-    ],
-    "links": [
-      {
-        "url": "https://groups.google.com/forum/#!topic/rubyonrails-security/GN7w9fFAQeI"
       }
     ]
   },
