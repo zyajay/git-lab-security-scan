@@ -3,7 +3,7 @@
 variables:
   DS_DEFAULT_ANALYZERS: bundler-audit,retire.js,gemnasium,gemnasium-maven,gemnasium-python
   DOCKER_DRIVER: overlay2
-  MAJOR: 1
+  MAJOR: 2
   TMP_IMAGE: $CI_REGISTRY_IMAGE/tmp:$CI_COMMIT_SHA
 
 services:

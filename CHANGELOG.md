@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v1.5.0
+- Use common library v2 and analyzers v2 to generate v1 reports
+
 ## v1.4.4
 - Fix `null` report instead of empty JSON array when no vulnerabilities
 
