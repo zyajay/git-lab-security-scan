@@ -159,10 +159,7 @@ tag version:
 major:
   extends: .release
   variables:
-    IMAGE_TAG: $MAJOR
-
-latest:
-  extends: .release
+    IMAGE_TAG: 1
 
 11-6-stable:
   extends: .release
