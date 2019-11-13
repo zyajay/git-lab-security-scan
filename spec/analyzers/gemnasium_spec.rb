@@ -47,7 +47,7 @@ RSpec.describe Analyzers::Gemnasium do
     it 'expect to have correct issues' do
       expect(issues.size).to eq(9)
       expect(issues).to all(have_attributes(tool: :gemnasium))
-      expect(issues).to all(have_attributes(priority: "Unknown"))
+      expect(issues).to all(have_attributes(priority: 'Unknown'))
 
       expect(issues[0].url).to be_nil
       expect(issues[0].file).to eq('Gemfile.lock')
@@ -55,7 +55,7 @@ RSpec.describe Analyzers::Gemnasium do
       expect(issues[0].solution).to eq('Upgrade to latest version.')
       expect(issues[0].cve).to eq('Vulnerabilities in libxml2 in nokogiri')
 
-      expect(issues[1].url).to eq("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068")
+      expect(issues[1].url).to eq('https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068')
       expect(issues[1].file).to eq('Gemfile.lock')
       expect(issues[1].message).to eq('Bypass of a protection mechanism in libxslt in nokogiri')
       expect(issues[1].solution).to eq('Upgrade to latest version if using vendored version of libxslt OR update the system library libxslt to a fixed version')
