@@ -18,8 +18,8 @@ RSpec.describe Analyzers::Gemnasium do
     it 'expects to parse its output and find issues' do
       expect(issues.size).to be >= 1
       expect(issues).to all(have_attributes(tool: :gemnasium))
-      expect(issues.any? { |i| i.message == 'Regular Expression Denial of Service for minimatch' }).to be true
-      expect(issues.any? { |i| i.solution == 'Upgrade to latest version.' }).to be true
+      expect(issues.any? { |i| i.message == 'Regular Expression Denial of Service in debug' }).to be true
+      expect(issues.any? { |i| i.solution == 'Upgrade to latest versions.' }).to be true
     end
   end
 

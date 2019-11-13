@@ -23,7 +23,18 @@ ruby test:
   extends: .ruby
   script:
     - bundle install
-    - rspec spec
+    - rspec spec --exclude-pattern '*/gemnasium_spec.rb'
+  only:
+    - branches
+
+ruby gemnasium test:
+  stage: ruby
+  image: registry.gitlab.com/gitlab-org/security-products/analyzers/gemnasium:2.3.0
+  script:
+    - apk add --no-cache ruby-bundler
+    - export GEMNASIUM_PATH="/gemnasium"
+    - bundle install
+    - bundle exec rspec spec --exclude-pattern '*/gemnasium_spec.rb'
   only:
     - branches
 

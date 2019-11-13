@@ -1,4 +1,5 @@
 FROM registry.gitlab.com/gitlab-org/security-products/analyzers/gemnasium:2.3.0
+ENV GEMNASIUM_PATH="/gemnasium"
 
 RUN mkdir /app
 WORKDIR /app

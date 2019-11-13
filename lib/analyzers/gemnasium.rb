@@ -11,9 +11,12 @@ module Analyzers
   class Gemnasium
     include Analyzers::Helpers
 
-    REPORT_NAME = 'gl-sast-gemnasium.json'.freeze
-    CLIENT_URL = 'https://gitlab.com/gitlab-org/security-products/binaries/raw/master/gemnasium-client/gemnasium-client-1.0.1'.freeze
-    CLIENT_PATH = '/app/bin/gemnasium'.freeze
+    class ProjectNotSupported < StandardError
+    end
+
+    REPORT_NAME = 'gl-dependency-scanning-report.json'.freeze
+    GEMNASIUM_PATH = ENV.fetch('GEMNASIUM_PATH', "bin/gemnasium")
+    SUPPORTED_DEPENDENCY_FILES = %w(composer.lock Gemfile.lock gems.locked maven-dependencies.json gemnasium-maven-plugin.json package-lock.json npm-shrinkwrap.json pipdeptree.json Pipfile.lock yarn.lock).freeze
 
     attr_reader :app, :report_path
 
@@ -23,40 +26,29 @@ module Analyzers
     end
 
     def found_technology?
-      install_client
-
-      Dir.chdir(@app.path) do
-        cmd <<-SH
-        [ ! -z "$(#{CLIENT_PATH} search .)" ]
-        SH
-      end
+      (Dir.entries(@app.path) & SUPPORTED_DEPENDENCY_FILES).length > 0
     end
 
     def execute
-      install_client
       output = analyze
       output_to_issues(output)
+    rescue ProjectNotSupported
+      []
     end
 
     private
 
-    def install_client
-      return if File.file?(CLIENT_PATH)
-      cmd <<-SH
-        mkdir -p #{File.dirname(CLIENT_PATH)}
-        curl #{CLIENT_URL} --output #{CLIENT_PATH}
-        chmod a+rx #{CLIENT_PATH}
-      SH
-    end
-
     def analyze
-      Dir.chdir(@app.path) do
-        cmd <<-SH
-        #{CLIENT_PATH} alerts . > #{report_path}
-        SH
-
-        JSON.parse(File.read(report_path))
+      cmd <<-SH
+        DS_REMEDIATE=false CI_PROJECT_DIR=#{@app.path} #{GEMNASIUM_PATH} run
+      SH
+      status = $?.exitstatus
+      if status == 3
+        raise ProjectNotSupported
+      elsif status != 0
+        raise RuntimeError.new "unexpected exit status: #{status}"
       end
+      JSON.parse(File.read(report_path))
     ensure
       File.delete(report_path) if File.exist?(report_path)
     end
