@@ -1,8 +1,8 @@
-FROM ruby:2.3
+FROM registry.gitlab.com/gitlab-org/security-products/analyzers/gemnasium:2.3.0
+
 RUN mkdir /app
 WORKDIR /app
 ADD . /app
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 RUN bundle install --without development test
 
 ENTRYPOINT  ["/app/bin/run"]
