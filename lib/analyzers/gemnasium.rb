@@ -64,26 +64,35 @@ module Analyzers
     def output_to_issues(output)
       issues = []
 
-      output['affections'].each do |affection|
-        advisory = output['advisories'].find { |a| a['uuid'] == affection['advisory'] }
-        dependency = affection['dependency']
+      output['vulnerabilities'].each do |advisory|
 
         issue = Issue.new
         issue.tool = :gemnasium
-        issue.url = advisory['urls'].first
-        issue.file = dependency['file']
+
+        # extract URL of first link
+        if links = advisory['links']
+          if link = links[0]
+            issue.url = link['url']
+          end
+        end
+
+        # extract location, solution, message
+        issue.file = advisory['location']['file']
         issue.solution = advisory['solution']
-        # TODO: add priority once supported. Default to Unknown in the meantime
+        issue.message = advisory['message']
+
+        # NOTE: priority is hard-coded
         issue.priority = 'Unknown'
 
-        issue.message = advisory['title'] + ' for ' + dependency['name']
-        identifier = advisory['identifier']
-        # Ensure we have a value for CVE as Frontend expects one
-        issue.cve = if identifier && identifier.match(/^CVE-/)
-                      identifier
-                    else
-                      issue.message
-                    end
+        # extract CVE id, use message if missing
+        cve_identifier = advisory['identifiers'].find do |identifier|
+          identifier['type'] == "cve"
+        end
+        if cve_identifier
+          issue.cve = cve_identifier['value']
+        else
+          issue.cve = issue.message
+        end
 
         issues << issue
       end

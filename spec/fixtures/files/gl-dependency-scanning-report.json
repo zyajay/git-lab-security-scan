@@ -1,0 +1,719 @@
+{
+  "version": "2.1",
+  "vulnerabilities": [
+    {
+      "category": "dependency_scanning",
+      "name": "Vulnerabilities in libxml2",
+      "message": "Vulnerabilities in libxml2 in nokogiri",
+      "description": "  The version of libxml2 packaged with Nokogiri contains several vulnerabilities.\r\n  Nokogiri has mitigated these issues by upgrading to libxml 2.9.5.\r\n\r\n  It was discovered that a type confusion error existed in libxml2. An\r\n  attacker could use this to specially construct XML data that\r\n  could cause a denial of service or possibly execute arbitrary\r\n  code. (CVE-2017-0663)\r\n\r\n  It was discovered that libxml2 did not properly validate parsed entity\r\n  references. An attacker could use this to specially construct XML\r\n  data that could expose sensitive information. (CVE-2017-7375)\r\n\r\n  It was discovered that a buffer overflow existed in libxml2 when\r\n  handling HTTP redirects. An attacker could use this to specially\r\n  construct XML data that could cause a denial of service or possibly\r\n  execute arbitrary code. (CVE-2017-7376)\r\n\r\n  Marcel Böhme and Van-Thuan Pham discovered a buffer overflow in\r\n  libxml2 when handling elements. An attacker could use this to specially\r\n  construct XML data that could cause a denial of service or possibly\r\n  execute arbitrary code. (CVE-2017-9047)\r\n\r\n  Marcel Böhme and Van-Thuan Pham discovered a buffer overread\r\n  in libxml2 when handling elements. An attacker could use this\r\n  to specially construct XML data that could cause a denial of\r\n  service. (CVE-2017-9048)\r\n\r\n  Marcel Böhme and Van-Thuan Pham discovered multiple buffer overreads\r\n  in libxml2 when handling parameter-entity references. An attacker\r\n  could use these to specially construct XML data that could cause a\r\n  denial of service. (CVE-2017-9049, CVE-2017-9050)",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:06565b64-486d-4326-b906-890d9915804d",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-06565b64-486d-4326-b906-890d9915804d",
+          "value": "06565b64-486d-4326-b906-890d9915804d",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "usn",
+          "name": "USN-3424-1",
+          "value": "USN-3424-1",
+          "url": "https://usn.ubuntu.com/3424-1/"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1673"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Bypass of a protection mechanism in libxslt",
+      "message": "Bypass of a protection mechanism in libxslt in nokogiri",
+      "description": "libxslt through 1.1.33 allows bypass of a protection mechanism because callers of xsltCheckRead and xsltCheckWrite permit access even upon receiving a -1 error code. xsltCheckRead can return -1 for a crafted URL that is not actually invalid and is subsequently loaded. Vendored version of libxslt has been patched to remediate this vulnerability. Note that this patch is not yet (as of 2019-04-22) in an upstream release of libxslt.",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:1a2e2e6e-67ba-4142-bfa1-3391f5416e4c",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version if using vendored version of libxslt OR update the system library libxslt to a fixed version",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-1a2e2e6e-67ba-4142-bfa1-3391f5416e4c",
+          "value": "1a2e2e6e-67ba-4142-bfa1-3391f5416e4c",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2019-11068",
+          "value": "CVE-2019-11068",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1892"
+        },
+        {
+          "url": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-11068"
+        },
+        {
+          "url": "https://security-tracker.debian.org/tracker/CVE-2019-11068"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "libxml2 vulnerabilities",
+      "message": "libxml2 vulnerabilities in nokogiri",
+      "description": "Nokogiri is affected via its dependency libxml2.\r\n\r\nCVE-2016-4448: Format string vulnerability in libxml2 allows attackers to\r\nhave unspecified impact via format string specifiers in unknown vectors.\r\n\r\nCVE-2016-4658: libxml2 allows remote attackers to execute arbitrary code or cause\r\na denial of service (memory corruption) via a crafted XML document.\r\n\r\nCVE-2016-5131: libxml2 allows remote attackers to cause a denial of\r\nservice or possibly have unspecified other impact via vectors related to\r\nthe XPointer range-to function.\r\n",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:208c00fd-0100-4109-9577-79b0a9a63a60",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-208c00fd-0100-4109-9577-79b0a9a63a60",
+          "value": "208c00fd-0100-4109-9577-79b0a9a63a60",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2016-4658",
+          "value": "CVE-2016-4658",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4658"
+        }
+      ],
+      "links": [
+        {
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4448.html"
+        },
+        {
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4658.html"
+        },
+        {
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5131.html"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1615"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Upstream libxslt vulnerabilities",
+      "message": "Upstream libxslt vulnerabilities in nokogiri",
+      "description": "* CVE-2017-5029: The xsltAddTextString function in `transform.c` lacks a check for integer overflow during a size calculation, which allows a remote attacker to perform an out of bounds memory write via a crafted HTML page.\r\n* CVE-2016-1683: `numbers.c` in libxslt mishandles namespace nodes, which allows remote attackers to cause a denial of service (out-of-bounds heap memory access) or possibly have unspecified other impact via a crafted document.\r\n* CVE-2016-1841: libxslt allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site.",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:4289ba56-7bdf-4067-8314-1b3209d05948",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-4289ba56-7bdf-4067-8314-1b3209d05948",
+          "value": "4289ba56-7bdf-4067-8314-1b3209d05948",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2017-5029",
+          "value": "CVE-2017-5029",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5029"
+        }
+      ],
+      "links": [
+        {
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-4738.html"
+        },
+        {
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-5029.html"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1634"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Infinite recursion in parameter entities",
+      "message": "Infinite recursion in parameter entities in nokogiri",
+      "description": "libxml2 incorrectly handles certain parameter entities. An attacker can leverage this with specially constructed XML data to cause libxml2 to consume resources, leading to a denial of service.",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:6a0d56f6-2441-492a-9b14-edb95ac31919",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-6a0d56f6-2441-492a-9b14-edb95ac31919",
+          "value": "6a0d56f6-2441-492a-9b14-edb95ac31919",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2017-16932",
+          "value": "CVE-2017-16932",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16932"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16932"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+        },
+        {
+          "url": "https://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-16932.html"
+        },
+        {
+          "url": "https://usn.ubuntu.com/usn/usn-3504-1/"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Denial of Service",
+      "message": "Denial of Service in nokogiri",
+      "description": "libxml2 incorrectly handles certain files. An attacker can use this issue with specially constructed XML data to cause libxml2 to consume resources, leading to a denial of service.\r\n\r\n",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:78658378-bd8f-4d79-81c8-07c419302426",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-78658378-bd8f-4d79-81c8-07c419302426",
+          "value": "78658378-bd8f-4d79-81c8-07c419302426",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2017-15412",
+          "value": "CVE-2017-15412",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15412"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1714"
+        },
+        {
+          "url": "https://people.canonical.com/~ubuntu-security/cve/2017/CVE-2017-15412.html"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Command Injection",
+      "message": "Command Injection in nokogiri",
+      "description": "A command injection vulnerability in Nokogiri allows commands to be executed in a subprocess by Ruby's `Kernel.open method`. Processes are vulnerable only if the undocumented method `Nokogiri::CSS::Tokenizer#load_file` is being passed untrusted user input.",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:7e9c16eb-d4ee-4c0a-a3b7-ed88f1ea7125",
+      "severity": "Unknown",
+      "solution": "Upgrade to the latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-7e9c16eb-d4ee-4c0a-a3b7-ed88f1ea7125",
+          "value": "7e9c16eb-d4ee-4c0a-a3b7-ed88f1ea7125",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2019-5477",
+          "value": "CVE-2019-5477",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5477"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1915"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5477"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Denial of service or RCE from libxml2 and libxslt",
+      "message": "Denial of service or RCE from libxml2 and libxslt in nokogiri",
+      "description": "Nokogiri is affected by series of vulnerabilities in libxml2 and libxslt,\r\nwhich are libraries Nokogiri depends on. It was discovered that libxml2 and\r\nlibxslt incorrectly handled certain malformed documents, which can allow\r\nmalicious users to cause issues ranging from denial of service to remote code\r\nexecution attacks.",
+      "cve": "Gemfile.lock:nokogiri:gemnasium:988aa1ec-2e90-4cdf-9ed5-0900f3846b70",
+      "severity": "Unknown",
+      "solution": "Upgrade to latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-988aa1ec-2e90-4cdf-9ed5-0900f3846b70",
+          "value": "988aa1ec-2e90-4cdf-9ed5-0900f3846b70",
+          "url": "https://deps.sec.gitlab.com/packages/gem/nokogiri/versions/1.6.7.2/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2015-8806",
+          "value": "CVE-2015-8806",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8806"
+        }
+      ],
+      "links": [
+        {
+          "url": "http://www.ubuntu.com/usn/usn-2994-1/"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/commit/03d402212707bd5dfa0a21b7de5e91a7f9d90028"
+        },
+        {
+          "url": "https://github.com/sparklemotion/nokogiri/issues/1473"
+        },
+        {
+          "url": "https://mail.gnome.org/archives/xml/2016-May/msg00023.html"
+        }
+      ]
+    },
+    {
+      "category": "dependency_scanning",
+      "name": "Path traversal on Windows",
+      "message": "Path traversal on Windows in rack-protection",
+      "description": "Path traversal is possible via backslash characters on Windows. An attacker could access arbitrary files and directories stored on the file system.",
+      "cve": "Gemfile.lock:rack-protection:gemnasium:fff2cf11-3422-4aaf-b18f-aa30a0f2ae37",
+      "severity": "Unknown",
+      "solution": "Update to latest version.",
+      "scanner": {
+        "id": "gemnasium",
+        "name": "Gemnasium"
+      },
+      "location": {
+        "file": "Gemfile.lock",
+        "dependency": {
+          "package": {
+            "name": "rack-protection"
+          },
+          "version": "2.0.0"
+        }
+      },
+      "identifiers": [
+        {
+          "type": "gemnasium",
+          "name": "Gemnasium-fff2cf11-3422-4aaf-b18f-aa30a0f2ae37",
+          "value": "fff2cf11-3422-4aaf-b18f-aa30a0f2ae37",
+          "url": "https://deps.sec.gitlab.com/packages/gem/rack-protection/versions/2.0.0/advisories"
+        },
+        {
+          "type": "cve",
+          "name": "CVE-2018-7212",
+          "value": "CVE-2018-7212",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7212"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://github.com/sinatra/rack-protection/pull/120"
+        },
+        {
+          "url": "https://github.com/sinatra/rack-protection/pull/120/commits/4239c2f189a73dfc93e957fc97adcbcbc0ed31c6"
+        },
+        {
+          "url": "https://github.com/sinatra/sinatra/commit/d17aa95f5056c52daf5d7c3170fbfd831dc96381"
+        },
+        {
+          "url": "https://github.com/sinatra/sinatra/pull/1379"
+        }
+      ]
+    }
+  ],
+  "remediations": [],
+  "dependency_files": [
+    {
+      "path": "Gemfile.lock",
+      "package_manager": "bundler",
+      "dependencies": [
+        {
+          "package": {
+            "name": "activesupport"
+          },
+          "version": "5.1.4"
+        },
+        {
+          "package": {
+            "name": "byebug"
+          },
+          "version": "10.0.0"
+        },
+        {
+          "package": {
+            "name": "coderay"
+          },
+          "version": "1.1.2"
+        },
+        {
+          "package": {
+            "name": "concurrent-ruby"
+          },
+          "version": "1.0.5"
+        },
+        {
+          "package": {
+            "name": "connection_pool"
+          },
+          "version": "2.2.1"
+        },
+        {
+          "package": {
+            "name": "diff-lcs"
+          },
+          "version": "1.3"
+        },
+        {
+          "package": {
+            "name": "faker"
+          },
+          "version": "1.6.6"
+        },
+        {
+          "package": {
+            "name": "ffi"
+          },
+          "version": "1.9.21"
+        },
+        {
+          "package": {
+            "name": "formatador"
+          },
+          "version": "0.2.5"
+        },
+        {
+          "package": {
+            "name": "guard"
+          },
+          "version": "2.14.2"
+        },
+        {
+          "package": {
+            "name": "guard-compat"
+          },
+          "version": "1.2.1"
+        },
+        {
+          "package": {
+            "name": "guard-rspec"
+          },
+          "version": "4.7.3"
+        },
+        {
+          "package": {
+            "name": "i18n"
+          },
+          "version": "0.9.5"
+        },
+        {
+          "package": {
+            "name": "listen"
+          },
+          "version": "3.1.5"
+        },
+        {
+          "package": {
+            "name": "lumberjack"
+          },
+          "version": "1.0.12"
+        },
+        {
+          "package": {
+            "name": "method_source"
+          },
+          "version": "0.9.0"
+        },
+        {
+          "package": {
+            "name": "mini_portile2"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "name": "minitest"
+          },
+          "version": "5.11.3"
+        },
+        {
+          "package": {
+            "name": "mustermann"
+          },
+          "version": "1.0.1"
+        },
+        {
+          "package": {
+            "name": "nenv"
+          },
+          "version": "0.3.0"
+        },
+        {
+          "package": {
+            "name": "nokogiri"
+          },
+          "version": "1.6.7.2"
+        },
+        {
+          "package": {
+            "name": "notiffany"
+          },
+          "version": "0.1.1"
+        },
+        {
+          "package": {
+            "name": "pg"
+          },
+          "version": "1.0.0"
+        },
+        {
+          "package": {
+            "name": "pry"
+          },
+          "version": "0.11.3"
+        },
+        {
+          "package": {
+            "name": "puma"
+          },
+          "version": "3.12.0"
+        },
+        {
+          "package": {
+            "name": "rack"
+          },
+          "version": "2.0.4"
+        },
+        {
+          "package": {
+            "name": "rack-protection"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "name": "rb-fsevent"
+          },
+          "version": "0.10.2"
+        },
+        {
+          "package": {
+            "name": "rb-inotify"
+          },
+          "version": "0.9.10"
+        },
+        {
+          "package": {
+            "name": "redis"
+          },
+          "version": "3.3.5"
+        },
+        {
+          "package": {
+            "name": "rspec"
+          },
+          "version": "3.7.0"
+        },
+        {
+          "package": {
+            "name": "rspec-core"
+          },
+          "version": "3.7.1"
+        },
+        {
+          "package": {
+            "name": "rspec-expectations"
+          },
+          "version": "3.7.0"
+        },
+        {
+          "package": {
+            "name": "rspec-mocks"
+          },
+          "version": "3.7.0"
+        },
+        {
+          "package": {
+            "name": "rspec-support"
+          },
+          "version": "3.7.1"
+        },
+        {
+          "package": {
+            "name": "ruby_dep"
+          },
+          "version": "1.5.0"
+        },
+        {
+          "package": {
+            "name": "shellany"
+          },
+          "version": "0.0.1"
+        },
+        {
+          "package": {
+            "name": "sidekiq"
+          },
+          "version": "4.2.10"
+        },
+        {
+          "package": {
+            "name": "sinatra"
+          },
+          "version": "2.0.0"
+        },
+        {
+          "package": {
+            "name": "slim"
+          },
+          "version": "3.0.9"
+        },
+        {
+          "package": {
+            "name": "spring"
+          },
+          "version": "2.0.2"
+        },
+        {
+          "package": {
+            "name": "temple"
+          },
+          "version": "0.8.0"
+        },
+        {
+          "package": {
+            "name": "thor"
+          },
+          "version": "0.20.0"
+        },
+        {
+          "package": {
+            "name": "thread_safe"
+          },
+          "version": "0.3.6"
+        },
+        {
+          "package": {
+            "name": "tilt"
+          },
+          "version": "2.0.8"
+        },
+        {
+          "package": {
+            "name": "tzinfo"
+          },
+          "version": "1.2.5"
+        }
+      ]
+    }
+  ]
+}
