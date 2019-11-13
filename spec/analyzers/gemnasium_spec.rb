@@ -49,7 +49,7 @@ RSpec.describe Analyzers::Gemnasium do
       expect(issues).to all(have_attributes(tool: :gemnasium))
       expect(issues).to all(have_attributes(priority: "Unknown"))
 
-      expect(issues[0].url).to eq('https://github.com/sparklemotion/nokogiri/issues/1673')
+      expect(issues[0].url).to be_nil
       expect(issues[0].file).to eq('Gemfile.lock')
       expect(issues[0].message).to eq('Vulnerabilities in libxml2 in nokogiri')
       expect(issues[0].solution).to eq('Upgrade to latest version.')

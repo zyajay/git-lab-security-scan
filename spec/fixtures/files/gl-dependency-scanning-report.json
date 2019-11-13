@@ -35,11 +35,6 @@
           "value": "USN-3424-1",
           "url": "https://usn.ubuntu.com/3424-1/"
         }
-      ],
-      "links": [
-        {
-          "url": "https://github.com/sparklemotion/nokogiri/issues/1673"
-        }
       ]
     },
     {
