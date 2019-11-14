@@ -12,11 +12,8 @@ module Analyzers
   class Gemnasium
     include Analyzers::Helpers
 
-    class ProjectNotSupported < StandardError
-    end
-
-    class UnexpectedExitStatus < StandardError
-    end
+    class ProjectNotSupported < StandardError; end
+    class UnexpectedExitStatus < StandardError; end
 
     REPORT_NAME = 'gl-dependency-scanning-report.json'.freeze
 
