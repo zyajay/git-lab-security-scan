@@ -163,6 +163,27 @@ latest:
 11-5-stable:
   extends: .release
 
+11-4-stable:
+  extends: .release
+
+11-3-stable:
+  extends: .release
+
+11-2-stable:
+  extends: .release
+
+11-1-stable:
+  extends: .release
+
+11-0-stable:
+  extends: .release
+
+10-8-stable:
+  extends: .release
+
+10-7-stable:
+  extends: .release
+
 include:
   - template: SAST.gitlab-ci.yml
   - template: Container-Scanning.gitlab-ci.yml
