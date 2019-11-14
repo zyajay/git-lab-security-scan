@@ -37,6 +37,8 @@ module Analyzers
       requirements.txt requirements.pip Pipfile requires.txt setup.py
     ].freeze
 
+    DOCKER_MOUNT_DIR = '/tmp/app'.freeze
+
     attr_reader :app, :report_path
 
     def initialize(app)
@@ -83,9 +85,19 @@ module Analyzers
     end
 
     def analyze_with_image(image)
+      # A bind mount cannot be used because it requires to known
+      # the "full or relative path on the host machine"
+      # (see https://docs.docker.com/storage/bind-mounts/)
+      # but the job definition does not propagate $CI_PROJECT_DIR.
       run_cmd do
         cmd <<-SH
-          docker run #{image} --volume #{@app.path}:/tmp/app -e CI_PROJECT_DIR=/tmp/app
+          set -e
+          export CONTAINER_ID=$(docker create --volume /var/run/docker.sock:/var/run/docker.sock -e CI_PROJECT_DIR=#{DOCKER_MOUNT_DIR} #{image})
+          docker cp #{@app.path} $CONTAINER_ID:#{DOCKER_MOUNT_DIR}
+          docker start -i $CONTAINER_ID
+          docker cp $CONTAINER_ID:#{DOCKER_MOUNT_DIR}/#{REPORT_NAME} #{@app.path}
+          docker stop $CONTAINER_ID
+          docker rm $CONTAINER_ID
         SH
       end
     end
