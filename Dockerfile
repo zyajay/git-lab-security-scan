@@ -9,7 +9,7 @@ WORKDIR /app
 ADD . /app
 
 SHELL ["/bin/ash", "-c"]
-RUN apk add --no-cache ruby-bundler && \
+RUN apk add --no-cache docker ruby-bundler && \
 	bundle install --without development test
 
 ENTRYPOINT  ["/app/bin/run"]
