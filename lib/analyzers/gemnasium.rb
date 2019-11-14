@@ -19,11 +19,22 @@ module Analyzers
     end
 
     REPORT_NAME = 'gl-dependency-scanning-report.json'.freeze
-    GEMNASIUM_PATH = ENV.fetch('GEMNASIUM_PATH', 'bin/gemnasium')
-    SUPPORTED_DEPENDENCY_FILES = %w[
+
+    GEMNASIUM_CLI_PATH = ENV.fetch('GEMNASIUM_CLI_PATH', 'bin/gemnasium')
+    GEMNASIUM_MAVEN_IMAGE = ENV.fetch('GEMNASIUM_MAVEN_IMAGE', 'gemnasium-maven')
+    GEMNASIUM_PYTHON_IMAGE = ENV.fetch('GEMNASIUM_PYTHON_IMAGE', 'gemnasium-python')
+    DOCKER_SOCKET_PATH = '/var/run/docker.sock'.freeze
+
+    GEMNASIUM_SUPPORTED_DEPENDENCY_FILES = %w[
       composer.lock Gemfile.lock gems.locked maven-dependencies.json
       gemnasium-maven-plugin.json package-lock.json npm-shrinkwrap.json
       pipdeptree.json Pipfile.lock yarn.lock
+    ].freeze
+
+    GEMNASIUM_MAVEN_SUPPORTED_DEPENDENCY_FILES = %w[pom.xml].freeze
+
+    GEMNASIUM_PYTHON_SUPPORTED_DEPENDENCY_FILES = %w[
+      requirements.txt requirements.pip Pipfile requires.txt setup.py
     ].freeze
 
     attr_reader :app, :report_path
@@ -34,28 +45,59 @@ module Analyzers
     end
 
     def found_technology?
-      (Dir.entries(@app.path) & SUPPORTED_DEPENDENCY_FILES).any?
+      supported_by_gemnasium? || supported_by_gemnasium_maven? || supported_by_gemnasium_python?
     end
 
     def execute
-      output = analyze
-      output_to_issues(output)
+      output = []
+      output += analyze_with_cli if supported_by_gemnasium?
+      output += analyze_with_image(GEMNASIUM_MAVEN_IMAGE) if supported_by_gemnasium_maven?
+      output += analyze_with_image(GEMNASIUM_PYTHON_IMAGE) if supported_by_gemnasium_python?
+      output
     rescue ProjectNotSupported
       []
     end
 
     private
 
-    def analyze
-      cmd <<-SH
-        DS_REMEDIATE=false CI_PROJECT_DIR=#{@app.path} #{GEMNASIUM_PATH} run
-      SH
+    def supported_by_gemnasium?
+      (Dir.entries(@app.path) & GEMNASIUM_SUPPORTED_DEPENDENCY_FILES).any?
+    end
+
+    def supported_by_gemnasium_maven?
+      docker_available? &&
+        (Dir.entries(@app.path) & GEMNASIUM_MAVEN_SUPPORTED_DEPENDENCY_FILES).any?
+    end
+
+    def supported_by_gemnasium_python?
+      docker_available? &&
+        (Dir.entries(@app.path) & GEMNASIUM_PYTHON_SUPPORTED_DEPENDENCY_FILES).any?
+    end
+
+    def analyze_with_cli
+      run_cmd do
+        cmd <<-SH
+          DS_REMEDIATE=false CI_PROJECT_DIR=#{@app.path} #{GEMNASIUM_CLI_PATH} run
+        SH
+      end
+    end
+
+    def analyze_with_image(image)
+      run_cmd do
+        cmd <<-SH
+          docker run #{image} --volume #{@app.path}:/tmp/app -e CI_PROJECT_DIR=/tmp/app
+        SH
+      end
+    end
+
+    def run_cmd
+      yield
       status = $CHILD_STATUS.exitstatus
       raise ProjectNotSupported if status == 3
       if status != 0
-        raise UnexpectedExitStatus, "unexpected exit status: #{@status}"
+        raise UnexpectedExitStatus, "unexpected exit status: #{status}"
       end
-      JSON.parse(File.read(report_path))
+      output_to_issues JSON.parse File.read report_path
     ensure
       File.delete(report_path) if File.exist?(report_path)
     end
@@ -90,6 +132,10 @@ module Analyzers
 
       issues = issues.uniq
       issues
+    end
+
+    def docker_available?
+      File.socket?(DOCKER_SOCKET_PATH)
     end
   end
 end
