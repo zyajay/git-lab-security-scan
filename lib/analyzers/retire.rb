@@ -11,7 +11,6 @@ module Analyzers
   class Retire
     include Analyzers::Helpers
 
-    BUILDPACK_URL = 'https://github.com/heroku/heroku-buildpack-nodejs'.freeze
     REPORT_NAME = 'gl-sast-retire.json'.freeze
 
     attr_reader :app, :report_path
@@ -22,7 +21,6 @@ module Analyzers
     end
 
     def execute
-      install_buildpack
       output = analyze
       output_to_issues(output)
     end
@@ -32,8 +30,6 @@ module Analyzers
     def analyze
       Dir.chdir(@app.path) do
         cmd <<-SH
-          export NODE_HOME="#{@app.path}/.heroku/node"
-          export PATH="#{@app.path}/.heroku/node/bin:#{@app.path}/.heroku/yarn/bin:$PATH:#{@app.path}/bin:#{@app.path}/node_modules/.bin"
           npm install -g retire@1.6.0
           retire --outputformat json --outputpath #{report_path}
         SH
@@ -83,15 +79,6 @@ module Analyzers
       end
 
       issues
-    end
-
-    def install_buildpack
-      Dir.mktmpdir do |dir|
-        cmd <<-SH
-          git clone #{BUILDPACK_URL} #{dir}
-          #{dir}/bin/test-compile #{@app.path}
-        SH
-      end
     end
   end
 end
