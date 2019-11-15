@@ -41,16 +41,8 @@ build commit:
   script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker build -t $TMP_IMAGE --build-arg DS_ANALYZER_IMAGE_TAG=$MAJOR .
+    - docker build -t $TMP_IMAGE .
     - docker push $TMP_IMAGE
-
-integration test:
-  image: docker:stable
-  stage: test
-  variables:
-    DS_ANALYZER_IMAGE_TAG: $MAJOR
-  script:
-    - echo "TODO"
 
 .qa-downstream-ds:
   stage: downstream
@@ -144,10 +136,7 @@ tag version:
 major:
   extends: .release
   variables:
-    IMAGE_TAG: $MAJOR
-
-latest:
-  extends: .release
+    IMAGE_TAG: "0"
 
 11-5-stable:
   extends: .release
