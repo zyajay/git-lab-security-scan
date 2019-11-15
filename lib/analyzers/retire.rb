@@ -30,6 +30,7 @@ module Analyzers
     def analyze
       Dir.chdir(@app.path) do
         cmd <<-SH
+          npm config set unsafe-perm true
           npm install -g retire@1.6.0
           retire --outputformat json --outputpath #{report_path}
         SH
