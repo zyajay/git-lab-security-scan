@@ -42,7 +42,11 @@ RSpec.describe Analyzers::Gemnasium do
   context 'when processing a known Gemnasium output file' do
     let!(:app_path) { file_fixture_path('empty_repository') }
     let!(:result_path) { file_fixture_path('gl-dependency-scanning-report.json') }
-    let(:issues) { mock_analyzer_output(Analyzers::Gemnasium.new(app), result_path) }
+    let!(:result) { JSON.parse File.read result_path }
+
+    # mock_analyzer_output cannot be used because of the way
+    # Analyzers::Gemnasium is implemented, so testing private method instead.
+    let(:issues) { Analyzers::Gemnasium.new(app).send(:output_to_issues, result) }
 
     it 'expect to have correct issues' do
       expect(issues.size).to eq(9)
