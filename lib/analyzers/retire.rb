@@ -34,7 +34,9 @@ module Analyzers
         cmd <<-SH
           export NODE_HOME="#{@app.path}/.heroku/node"
           export PATH="#{@app.path}/.heroku/node/bin:#{@app.path}/.heroku/yarn/bin:$PATH:#{@app.path}/bin:#{@app.path}/node_modules/.bin"
+          npm config set unsafe-perm true
           npm install -g retire@1.6.0
+          ls yarn.lock && yarn install --ignore-engines || npm install
           retire --outputformat json --outputpath #{report_path}
         SH
 
