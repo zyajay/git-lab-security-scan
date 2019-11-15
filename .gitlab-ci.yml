@@ -34,7 +34,7 @@ ruby gemnasium test:
     - apk add --no-cache ruby-bundler
     - export GEMNASIUM_PATH="/gemnasium"
     - bundle install
-    - bundle exec rspec spec --exclude-pattern '*/gemnasium_spec.rb'
+    - bundle exec rspec spec --pattern '*/gemnasium_spec.rb'
   only:
     - branches
 
