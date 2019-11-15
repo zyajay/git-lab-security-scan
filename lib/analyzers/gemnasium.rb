@@ -116,19 +116,16 @@ module Analyzers
 
       output['vulnerabilities'].each do |advisory|
         issue = Issue.new
+
+        # set hard-coded values
         issue.tool = :gemnasium
+        issue.priority = 'Unknown'
 
-        # extract URL of first link
-        links = advisory['links']
-        issue.url = links[0]['url'] if links && links.any?
-
-        # extract location, solution, message
-        issue.file = advisory['location']['file']
+        # extract fields
+        issue.url = advisory.dig('links', 0, 'url')
+        issue.file = advisory.dig('location', 'file')
         issue.solution = advisory['solution']
         issue.message = advisory['message']
-
-        # NOTE: priority is hard-coded
-        issue.priority = 'Unknown'
 
         # extract CVE id, use message if missing
         cve_identifier = advisory['identifiers'].find do |identifier|
