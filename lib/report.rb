@@ -77,9 +77,8 @@ class Report
       # Aggregates all tools in a new property
       first.tools = [first.tool]
       duplicates.each do |dup|
-        # Do not aggregate multiple occurences from the same tool
-        next if first.tools.include? dup.tool
-        first.tools << dup.tool
+        # Add tool to tools unless already present
+        first.tools << dup.tool unless first.tools.include? dup.tool
         # Remove duplicate
         issues.delete dup
       end
