@@ -17,7 +17,7 @@ stages:
 
 .ruby:
   stage: ruby
-  image: ruby:2.3
+  image: ruby:2.5
 
 ruby test:
   extends: .ruby
