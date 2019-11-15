@@ -15,20 +15,20 @@ stages:
   - tag
   - deploy
 
-.ruby:
-  stage: ruby
-  image: ruby:2.3
-
 ruby test:
-  extends: .ruby
+  stage: ruby
+  image: registry.gitlab.com/gitlab-org/security-products/analyzers/gemnasium:2.3.0
   script:
+    - apk add --no-cache ruby-bundler
+    - export GEMNASIUM_CLI_PATH="/analyzer"
     - bundle install
-    - rspec spec
+    - bundle exec rspec spec
   only:
     - branches
 
 ruby lint:
-  extends: .ruby
+  stage: ruby
+  image: ruby:2.5
   script:
     - bundle install
     - bundle exec rubocop
@@ -150,6 +150,27 @@ latest:
   extends: .release
 
 11-5-stable:
+  extends: .release
+
+11-4-stable:
+  extends: .release
+
+11-3-stable:
+  extends: .release
+
+11-2-stable:
+  extends: .release
+
+11-1-stable:
+  extends: .release
+
+11-0-stable:
+  extends: .release
+
+10-8-stable:
+  extends: .release
+
+10-7-stable:
   extends: .release
 
 include:

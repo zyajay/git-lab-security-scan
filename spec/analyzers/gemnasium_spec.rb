@@ -18,8 +18,8 @@ RSpec.describe Analyzers::Gemnasium do
     it 'expects to parse its output and find issues' do
       expect(issues.size).to be >= 1
       expect(issues).to all(have_attributes(tool: :gemnasium))
-      expect(issues.any? { |i| i.message == 'Regular Expression Denial of Service for minimatch' }).to be true
-      expect(issues.any? { |i| i.solution == 'Upgrade to latest version.' }).to be true
+      expect(issues.any? { |i| i.message == 'Regular Expression Denial of Service in debug' }).to be true
+      expect(issues.any? { |i| i.solution == 'Upgrade to latest versions.' }).to be true
     end
   end
 
@@ -41,14 +41,29 @@ RSpec.describe Analyzers::Gemnasium do
 
   context 'when processing a known Gemnasium output file' do
     let!(:app_path) { file_fixture_path('empty_repository') }
-    let!(:result_path) { file_fixture_path('gemnasium_output.json') }
-    let(:issues) { mock_analyzer_output(Analyzers::Gemnasium.new(app), result_path) }
+    let!(:result_path) { file_fixture_path('gl-dependency-scanning-report.json') }
+    let!(:result) { JSON.parse File.read result_path }
+
+    # mock_analyzer_output cannot be used because of the way
+    # Analyzers::Gemnasium is implemented, so testing private method instead.
+    let(:issues) { Analyzers::Gemnasium.new(app).send(:output_to_issues, result) }
 
     it 'expect to have correct issues' do
       expect(issues.size).to eq(9)
       expect(issues).to all(have_attributes(tool: :gemnasium))
-      expect(issues[0].message).to eq('Regular Expression Denial of Service for minimatch')
+      expect(issues).to all(have_attributes(priority: 'Unknown'))
+
+      expect(issues[0].url).to be_nil
+      expect(issues[0].file).to eq('Gemfile.lock')
+      expect(issues[0].message).to eq('Vulnerabilities in libxml2 in nokogiri')
       expect(issues[0].solution).to eq('Upgrade to latest version.')
+      expect(issues[0].cve).to eq('Vulnerabilities in libxml2 in nokogiri')
+
+      expect(issues[1].url).to eq('https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11068')
+      expect(issues[1].file).to eq('Gemfile.lock')
+      expect(issues[1].message).to eq('Bypass of a protection mechanism in libxslt in nokogiri')
+      expect(issues[1].solution).to eq('Upgrade to latest version if using vendored version of libxslt OR update the system library libxslt to a fixed version')
+      expect(issues[1].cve).to eq('CVE-2019-11068')
     end
   end
 end
