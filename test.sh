@@ -54,11 +54,11 @@ fi
 step=$((step+1))
 echo
 
-# Project found, artifact generated (bind mount, no pull, no remote checks)
+# Project found, artifact generated (bind mount, no pull)
 expect="test/expect/gl-dependency-scanning-report.no-remote-checks.json"
 desc="Generate expected artifact w/o remote checks"
 rm -f $got
-CI_PROJECT_DIR="$PWD/test/fixtures" DS_DISABLE_REMOTE_CHECKS=1 DS_PULL_ANALYZER_IMAGES=0 ./dependency-scanning
+CI_PROJECT_DIR="$PWD/test/fixtures" DS_PULL_ANALYZER_IMAGES=0 ./dependency-scanning
 
 if test $? -eq 0 && diff -u $expect $got; then
   echo "ok $step - $desc"
