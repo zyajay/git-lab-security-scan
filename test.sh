@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Make it TAP compliant, see http://testanything.org/tap-specification.html
-echo "1..4"
+echo "1..3"
 
 failed=0
 step=1
