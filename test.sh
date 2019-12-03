@@ -54,21 +54,6 @@ fi
 step=$((step+1))
 echo
 
-# Project found, artifact generated (bind mount, no pull)
-expect="test/expect/gl-dependency-scanning-report.no-remote-checks.json"
-desc="Generate expected artifact w/o remote checks"
-rm -f $got
-CI_PROJECT_DIR="$PWD/test/fixtures" DS_PULL_ANALYZER_IMAGES=0 ./dependency-scanning
-
-if test $? -eq 0 && diff -u $expect $got; then
-  echo "ok $step - $desc"
-else
-  echo "not ok $step - $desc"
-  failed=$((failed+1))
-fi
-step=$((step+1))
-echo
-
 # Finish tests
 count=$((step-1))
 if [ $failed -ne 0 ]; then
