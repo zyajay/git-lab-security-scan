@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.5.0
+- Add `build.gradle` support (!53)
+
 ## v2.4.0
 - Add `setup.py` support (!40)
 
