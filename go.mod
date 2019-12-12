@@ -13,14 +13,14 @@ require (
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/stretchr/testify v1.3.0 // indirect
-	github.com/urfave/cli v1.20.0
+	github.com/urfave/cli v1.22.1
 	gitlab.com/gitlab-org/security-products/analyzers/bundler-audit/v2 v2.0.0
 	gitlab.com/gitlab-org/security-products/analyzers/common/orchestrator/v2 v2.0.0-0.20190628143551-be881429535b
 	gitlab.com/gitlab-org/security-products/analyzers/common/table/v2 v2.0.0-0.20190628143551-be881429535b
-	gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.4.2
-	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2 v2.2.0
+	gitlab.com/gitlab-org/security-products/analyzers/common/v2 v2.5.2
+	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-maven/v2 v2.5.0
 	gitlab.com/gitlab-org/security-products/analyzers/gemnasium-python/v2 v2.3.0
-	gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2 v2.2.4
+	gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2 v2.5.0
 	gitlab.com/gitlab-org/security-products/analyzers/retire.js/v2 v2.0.0
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4 // indirect
 	google.golang.org/grpc v1.21.0 // indirect
