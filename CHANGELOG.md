@@ -1,5 +1,10 @@
 # GitLab Dependency Scanning changelog
 
+## v2.6.0
+- Add `DS_PIP_VERSION` and `PIP_REQUIREMENTS_FILE` options in `gemnasium-python` (!54)
+- Add support for scala/sbt in `gemnasium-maven` (!54)
+- Add `BUNDLER_AUDIT_UPDATE_DISABLED` option in `bundler-audit` (!54)
+
 ## v2.5.0
 - Add `build.gradle` support (!53)
 
