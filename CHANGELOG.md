@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.6.1
+- Suppress the progress message on pulling analyzer image (!57)
+
 ## v2.6.0
 - Add `DS_PIP_VERSION` and `PIP_REQUIREMENTS_FILE` options in `gemnasium-python` (!54)
 - Add support for scala/sbt in `gemnasium-maven` (!54)
