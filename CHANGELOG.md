@@ -1,5 +1,8 @@
 # GitLab Dependency Scanning changelog
 
+## v2.7.0
+- Add support for scanning `go` via `go.sum` (!58)
+
 ## v2.6.1
 - Log when downloading, starting analyzers (!56)
 - Suppress the progress message on pulling analyzer image (!56)

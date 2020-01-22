@@ -119,6 +119,11 @@ ruby-bundler-qa:
   trigger:
     project: gitlab-org/security-products/tests/ruby-bundler
 
+go-modules-qa:
+  extends: .qa-downstream-ds
+  trigger:
+    project: gitlab-org/security-products/tests/go-modules
+
 .docker_tag:
   image: docker:stable
   stage: tag
