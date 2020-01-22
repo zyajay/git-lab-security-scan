@@ -23,6 +23,7 @@ import (
 	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/npm"
 	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/pipdeptree"
 	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/yarn"
+	_ "gitlab.com/gitlab-org/security-products/analyzers/gemnasium/v2/scanner/parser/go"
 )
 
 func main() {
