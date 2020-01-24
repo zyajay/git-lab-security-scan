@@ -178,6 +178,9 @@ major:
 latest:
   extends: .release
 
+12-8-stable:
+  extends: .release
+
 12-7-stable:
   extends: .release
 
