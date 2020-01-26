@@ -46,19 +46,19 @@ DS Analyzer API:
 that detects and analyzes compatible projects.
 - It searches for compatible project in `$CI_PROJECT_DIR` and analyzes it.
 - It generates an artifact named `gl-dependency-scanning-report.json` in `$CI_PROJECT_DIR`.
-- It exits with the appropiate exit code. See below.
+- It exits with the appropriate exit code. See below.
 
 Exit codes:
 
 - 0 if a compatible project has been found and successfully analyzed
 - 2 if the arguments are invalid or when showing the help
 - 3 if no compatible project has been found
-- 1 if an error has occured
+- 1 if an error has occurred
 
 Note that the exit code is 0 when vulnerabilities are found.
 
 You can implement an analyzer using the Go language
-and the [common libary](https://gitlab.com/gitlab-org/security-products/analyzers/common).
+and the [common library](https://gitlab.com/gitlab-org/security-products/analyzers/common).
 This library provides three Go packages:
 - [search](https://gitlab.com/gitlab-org/security-products/analyzers/common/tree/master/search) to search for compatible projects
 - [issue](https://gitlab.com/gitlab-org/security-products/analyzers/common/tree/master/issue) to generate the JSON artifact
