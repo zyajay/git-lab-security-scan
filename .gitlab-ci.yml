@@ -92,6 +92,7 @@ js-npm-qa:
   trigger:
     project: gitlab-org/security-products/tests/js-npm
 
+    # testing
 js-yarn-qa:
   extends: .qa-downstream-ds
   trigger:
