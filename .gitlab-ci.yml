@@ -96,7 +96,7 @@ js-yarn-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/js-yarn
-    branch: test-updated-qa-jq-command
+    branch: test-updated-qa-jq-command-from-master
 
 php-composer-qa:
   extends: .qa-downstream-ds
