@@ -81,18 +81,20 @@ java-maven-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/java-maven
+    branch: update-severity-level-in-ds-expectation-master
 
 java-maven-multimodule-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/java-maven-multimodules
+    branch: update-severity-level-in-ds-expectation-master
 
 js-npm-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/js-npm
+    branch: update-severity-level-in-ds-expectation-master
 
-    # testing
 js-yarn-qa:
   extends: .qa-downstream-ds
   trigger:
@@ -103,26 +105,31 @@ php-composer-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/php-composer
+    branch: update-severity-level-in-ds-expectation-master
 
 python-pipenv-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/python-pipenv
+    branch: update-severity-level-in-ds-expectation-master
 
 python-pip-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/python-pip
+    branch: update-severity-level-in-ds-expectation-master
 
 ruby-bundler-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/ruby-bundler
+    branch: update-severity-level-in-ds-expectation-master
 
 go-modules-qa:
   extends: .qa-downstream-ds
   trigger:
     project: gitlab-org/security-products/tests/go-modules
+    branch: test-updated-qa-jq-command-from-master
 
 .docker_tag:
   image: docker:stable
