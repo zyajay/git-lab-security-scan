@@ -77,7 +77,6 @@ integration test:
     branch: master
     strategy: depend
 
-# re-run jobs3
 java-maven-qa:
   extends: .qa-downstream-ds
   trigger:
