@@ -122,6 +122,21 @@ go-modules-qa:
   trigger:
     project: gitlab-org/security-products/tests/go-modules
 
+scala-sbt-qa:
+  extends: .qa-downstream-ds
+  trigger:
+    project: gitlab-org/security-products/tests/scala-sbt
+
+java-gradle-qa:
+  extends: .qa-downstream-ds
+  trigger:
+    project: gitlab-org/security-products/tests/java-gradle
+
+java-gradle-multimodules-qa:
+  extends: .qa-downstream-ds
+  trigger:
+    project: gitlab-org/security-products/tests/java-gradle-multimodules
+
 .docker_tag:
   image: docker:stable
   stage: tag
