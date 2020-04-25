@@ -117,6 +117,16 @@ ruby-bundler-qa:
   trigger:
     project: gitlab-org/security-products/tests/ruby-bundler
 
+ruby-bundler_js-yarn-qa:
+  extends: .qa-downstream-ds
+  trigger:
+    project: gitlab-org/security-products/tests/ruby-bundler_js-yarn
+
+ruby-bundler-rails-qa:
+  extends: .qa-downstream-ds
+  trigger:
+    project: gitlab-org/security-products/tests/ruby-bundler-rails
+
 go-modules-qa:
   extends: .qa-downstream-ds
   trigger:
